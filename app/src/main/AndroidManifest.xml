@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gisfy.ntfp">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Login.ResetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".VSS.Collectors.FamilyDetails.CollectorsFamilyDetails"
+            android:exported="false" />
+        <activity
+            android:name=".RFO.RFOProfile"
+            android:exported="false" />
+        <activity
+            android:name=".VSS.RequestForm.DownloadPdf"
+            android:exported="true" />
+        <activity android:name=".Collectors.Payments.CollectorPaymentsActivity" />
+        <activity android:name=".Collectors.InventoryList" />
+        <activity android:name=".Collectors.CollectorInventory" />
+        <activity android:name=".Collectors.VideoGallaryActivity" />
+        <activity android:name=".Login.SynchronizeActivity" />
+        <activity android:name=".Login.ForgotPassordActivity" />
+        <activity android:name=".Collectors.PDFViewer" />
+        <activity android:name=".RFO.Status.TransitActivity" />
+        <activity android:name=".Login.RoleChoose" />
+        <activity android:name=".Login.Language" />
+        <activity android:name=".VSS.Dashboard.Dashboard" />
+        <activity android:name=".VSS.Inventory.list_inventory" />
+        <activity android:name=".VSS.Inventory.add_inventory" />
+        <activity android:name=".VSS.Inventory.edit_inventory" />
+        <activity android:name=".VSS.Collectors.list_collectors" />
+        <activity android:name=".VSS.Collectors.edit_collector" />
+        <activity
+            android:name=".VSS.Collectors.add_collector"
+            android:screenOrientation="fullSensor" />
+        <activity android:name=".VSS.Collectors.ImportExcel" />
+        <activity android:name=".VSS.Invoice.InvoiceActivity" />
+        <activity android:name=".VSS.Payment.MakePaymentsActivity" />
+        <activity android:name=".VSS.Payment.Recieved.ReceivedPaymentsActivity" />
+        <activity android:name=".VSS.RequestForm.list_request" />
+        <activity android:name=".VSS.RequestForm.view_requests" />
+        <activity android:name=".VSS.Shipment.add_shipment" />
+        <activity android:name=".VSS.Shipment.edit_shipment" />
+        <activity android:name=".VSS.Shipment.list_shipment" />
+        <activity android:name=".VSS.PCtoVSS.PCTOVSSActivity" />
+        <activity android:name=".VSS.CollectorInventory.CollectorInventory" />
+        <activity android:name=".HomePage.Home" />
+        <activity android:name=".Login.LoginActivity" />
+        <activity android:name=".Profile.Profile" />
+        <activity android:name=".RFO.Status.ToVSS" />
+        <activity android:name=".RFO.Status.ToDFO" />
+        <activity android:name=".RFO.Dashboard" />
+        <activity android:name=".Collectors.Collector_Pass" />
+        <activity android:name=".Collectors.Ticket_UI" />
+        <activity android:name=".Collectors.PDFList" />
+        <activity android:name=".Collectors.StockRequest" />
+        <activity android:name=".Login.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Utils.ImagePickerActivity" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name=".Utils.MyFirebaseMessagingService"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="io.sentry.dsn"
+            android:value="https://45f61444a07e48168a47369f1e9175da@o1158822.ingest.sentry.io/6257884" />
+        <!--
+ Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+           We recommend adjusting this value in production.
+        -->
+        <meta-data
+            android:name="io.sentry.traces.sample-rate"
+            android:value="1.0" />
+    </application>
+
+</manifest>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="true">ഫോറസ്റ് പ്ലസ് 2.0</string>
+    <string name="splash_note2" translatable="true">വികസിപ്പിച്ചതും പരിപാലിച്ചതും:</string>
+    <string name="email" translatable="true">ഉപയോക്തൃനാമം</string>
+    <string name="password" translatable="true"> പാസ്‍വേർഡ്</string>
+    <string name="welcomenote" translatable="true">സ്വാഗതം</string>
+    <string name="title_collectors_list" translatable="true">കിഷോർ കെതിനേനി</string>
+    <string name="title2_collectors_list" translatable="true">തിരുവനന്തപുരം</string>
+    <string name="title3_collectors_list" translatable="true">ഇന്ത്യയിലെ കേരള സംസ്ഥാനത്തെ നിയമ നിർവ്വഹണ ഏജൻസിയാണ് കേരള വനം വകുപ്പ്. പതിനെട്ടാം നൂറ്റാണ്ട് വരെ കേരളത്തിന്റെ 75% ഭൂവിസ്തൃതി വനത്താൽ മൂടപ്പെട്ടിരുന്നു.</string>
+
+    <array name="sampleSpinner">
+        <item>ഏതെങ്കിലും തിരഞ്ഞെടുക്കുക</item>
+        <item> എസ്.സി</item>
+        <item> എസ്.ടി  </item>
+        <item>പൊതുവായ</item>
+    </array>
+
+
+    <array name="ntfp_type">
+        <item>എൻ.ടി.എഫ്.പി തരം തിരഞ്ഞെടുക്കുക</item>
+        <item>പുറംതൊലി</item>
+        <item>വേരുകൾ</item>
+        <item>ഇല</item>
+        <item>ഫലം</item>
+        <item>പുഷ്പം</item>
+        <item>വിത്തുകൾ</item>
+    </array>
+
+    <array name="gender">
+        <item>ലിംഗഭേദം തിരഞ്ഞെടുക്കുക</item>
+        <item>പുരുഷൻ</item>
+        <item>സ്ത്രീ</item>
+        <item>മറ്റുള്ളവ</item>
+    </array>
+
+    <array name="IDtype">
+        <item>ഏതെങ്കിലും ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക</item>
+        <item>
+            അധാർ കാർഡ്
+        </item>
+        <item>വോട്ടർ ഐഡി</item>
+        <item>ഡ്രൈവിംഗ് ലൈസൻസ്</item>
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="basicdetails" translatable="true">അടിസ്ഥാന വിശദാംശങ്ങൾ</string>
+    <string name="vssname" translatable="true">വി.എസ്.എസ് പേര്*</string>
+    <string name="divisionname" translatable="true">ഡിവിഷൻ പേര്*</string>
+    <string name="rangename" translatable="true">റേഞ്ച് പേര്*</string>
+    <string name="villagename" translatable="true">വില്ലജ് പേര്*</string>
+    <string name="collectorname" translatable="true">ശേഖരിക്കുന്ന ആളുടെ പേര്*</string>
+    <string name="collectornamep" translatable="false">ശേഖരിക്കുന്ന ആളുടെ പേര്</string>
+    <string name="spoucename" translatable="true">ജീവിതപങ്കാളിയുടെ പേര്*</string>
+    <string name="spoucenamep" translatable="true">ജീവിതപങ്കാളിയുടെ പേര്</string>
+    <string name="socialcat" translatable="true">സോഷ്യൽ വിഭാഗം തിരഞ്ഞെടുക്കുക*</string>
+    <string name="age" translatable="true">പ്രായം*</string>
+    <string name="gender" translatable="true">ലിംഗഭേദം തിരഞ്ഞെടുക്കുക*</string>
+    <string name="dob" translatable="true">ജനനത്തീയതി*</string>
+    <string name="idtype" translatable="true">ഐഡി തരം തിരഞ്ഞെടുക്കുക*</string>
+    <string name="idno" translatable="true">ഐഡി നമ്പർ .*</string>
+    <string name="selectntfps" translatable="true">പ്രധാന തടി ഇതര വന ഉൽപ്പന്നങ്ങൾ തിരഞ്ഞെടുക്കുക*</string>
+    <string name="educational" translatable="true">വിദ്യാഭ്യാസ യോഗ്യത*</string>
+    <string name="familymem" translatable="true">മൊത്തം കുടുംബാംഗങ്ങളുടെ എണ്ണം*</string>
+    <string name="bankname" translatable="true">ബാങ്കിന്റെ പേര്*</string>
+    <string name="accno" translatable="true">അക്കൗണ്ട് നമ്പർ*</string>
+    <string name="ifsc" translatable="true">ഐ.എഫ്.എസ്.സി*</string>
+    <string name="username" translatable="true">ഉപയോക്തൃനാമം*</string>
+    <string name="info" translatable="true">മറ്റ് പ്രസക്തമായ വിവരങ്ങൾ*</string>
+    <string name="addcollector" translatable="true">ശേഖരിക്കുന്ന ആളെ ചേർക്കുക</string>
+    <string name="importexcel" translatable="true">എക്സൽ-ൽ നിന്ന് ചേർക്കുക</string>
+    <string name="imports" translatable="true"> ഇറക്കുമതി</string>
+    <string name="collectorList" translatable="true">ശേഖരിക്കുന്നവരുടെ പട്ടിക</string>
+    <string name="stockdetails" translatable="true">ഇനത്തിന്റെ വിശദാംശങ്ങൾ</string>
+    <string name="selectcollector" translatable="true">ശേഖരിക്കുന്നവരെ ചേർക്കുക*</string>
+    <string name="measurement" translatable="true">അളവ് അളക്കൽ*</string>
+    <string name="quality" translatable="true">അളവ്</string>
+    <string name="dashboard" translatable="true">ഡാഷ്‌ബോർഡ്</string>
+    <string name="piechart" translatable="true">പൈചാർട്ട് ഡാറ്റ</string>
+    <string name="barchart" translatable="true">ബാർചാർട്ട് ഡാറ്റ</string>
+    <string name="linechart" translatable="true">ലൈൻചാർട്ട് ഡാറ്റ</string>
+    <string name="addinv" translatable="true">സാധന സാമഗ്രികൾ ചേർക്കുക*</string>
+    <string name="listinv" translatable="true">സാധന സാമഗ്രികൾ പട്ടികപ്പെടുത്തുക</string>
+    <string name="paymentdetails" translatable="true"> പണം കൊടുക്കലിന്റെ വിശദാംശങ്ങൾ </string>
+    <string name="addPayment" translatable="true">പണം കൊടുക്കൽ ചേർക്കുക</string>
+    <string name="amountrecieved" translatable="true">ലഭിച്ച തുക*</string>
+    <string name="amountrecievedfrom" translatable="true">മുതൽ ലഭിച്ച തുക*</string>
+    <string name="thirparty" translatable="true">മൂന്നാം കക്ഷി</string>
+    <string name="stsociety" translatable="true">എസ്.റ്റി സമൂഹം</string>
+    <string name="societyname" translatable="true">സമൂഹത്തിന്റെ പേര്*</string>
+    <string name="updatepayment" translatable="true">പണം കൊടുക്കലിന്റെ വിശദാംശങ്ങൾ അപ്ഡേറ്റ് ചെയ്യുക</string>
+    <string name="listpayment" translatable="true">പണം കൊടുക്കൽ പട്ടിക</string>
+    <string name="transitrequest" translatable="true">വിഭവം അയക്കൽ</string>
+    <string name="swipeup" translatable="true">മുകളിലേക്ക് നീക്കുക</string>
+    <string name="selectrfo" translatable="true">യാത്രാമാർഗം അനുമതിക്കായി ആർ.എഫ്.ഒ-നെ തിരഞ്ഞെടുക്കുക*</string>
+    <string name="requesttransitpass" translatable="true">യാത്രാമാർഗം അനുമതിക്കായി അഭ്യർത്ഥിക്കുക</string>
+    <string name="shipmentdetails" translatable="true">ചരക്ക് അയച്ചതിന്റെ വിവരങ്ങൾ*</string>
+    <string name="selecttransitpass" translatable="true">യാത്രാമാർഗ പാസ് തിരഞ്ഞെടുക്കുക*</string>
+    <string name="selectprocessingcenter" translatable="true">പ്രോസസ്സിംഗ് സെന്റർ തിരഞ്ഞെടുക്കുക*</string>
+    <string name="meansoftransportation" translatable="true">ഗതാഗത മാർഗം*</string>
+    <string name="vehicleno" translatable="true">വാഹന നമ്പർ,.</string>
+    <string name="addshipment" translatable="true">കയറ്റുമതി ചേർക്കുക</string>
+    <string name="shipmentList" translatable="true">കയറ്റുമതി പട്ടിക</string>
+    <string name="collectors" translatable="true">ശേഖരിക്കുന്നവർ </string>
+    <string name="inventory" translatable="true">സാധന സാമഗ്രികൾ</string>
+    <string name="shipment" translatable="true">കയറ്റുമതി</string>
+    <string name="payment" translatable="true">പണം കൊടുക്കൽ</string>
+    <string name="viewcollecotrs" translatable="true"> ശേഖരിക്കുന്നവരെ കാണുക</string>
+    <string name="viewstocks" translatable="true">സംഭരണം കാണുക</string>
+    <string name="addtransitrequest" translatable="true">യാത്രാമാർഗ അഭ്യർത്ഥന ചേർക്കുക</string>
+    <string name="viewtransit" translatable="true">യാത്രാമാർഗ അഭ്യർത്ഥന കാണുക</string>
+    <string name="viewshipment" translatable="true">കയറ്റുമതി കാണുക</string>
+    <string name="newpayments" translatable="true">പണം കൊടുക്കൽ ചേർക്കുക</string>
+    <string name="paymentsrecieved" translatable="true">പണം ലഭിച്ചത് ചേർക്കുക </string>
+    <string name="viewpayments" translatable="true">പണം ലഭിച്ചത് കാണുക</string>
+    <string name="profile" translatable="true">വ്യക്തിഗത വിവരണം</string>
+    <string name="logout" translatable="true">ലോഗൗട്ട്</string>
+    <string name="division" translatable="true">"ഡിവിഷൻ "</string>
+    <string name="range" translatable="true">"റേഞ്ച് "</string>
+    <string name="village" translatable="true">"വില്ലേജ് "</string>
+    <string name="vss" translatable="true">"വി.എസ്.എസ് പേര്: "</string>
+    <string name="phoneno" translatable="true">ഫോൺ നമ്പർ</string>
+    <string name="unabletofetch">വിശദാംശങ്ങൾ നേടാനായില്ല</string>
+    <string name="somethingwentwrong">രേഖപ്പെടുത്തിയ വിവരം പുനർപരിശോധിക്കുക</string>
+    <string name="updatecollector">ശേഖരിക്കുന്നവരെ അപ്ഡേറ്റ് ചെയ്യുക</string>
+
+
+    <string name="ack1" translatable="true">ഇനത്തിന്റെ-വിഭവ വിവരം (പ്രോസസ്സിംഗ് സെന്റർ മുതൽ വി.എസ്.എസ് വരെ)</string>
+    <string name="ack2" translatable="true">ഇനത്തിന്റെ-വിഭവ വിവരം (പ്രോസസ്സിംഗ് സെന്റർ മുതൽ ഡി.എഫ്.ഒ വരെ)</string>
+    <string name="transitlist" translatable="true">യാത്രാമാർഗ പട്ടിക</string>
+    <string name="todfo" translatable="true">വിശദാംശ പട്ടിക  </string>
+    <string name="tovss" translatable="true">വി.എസ്.എസ്-ലേക്കുള്ള പട്ടിക</string>
+    <string name="transitpass" translatable="true">യാത്രാമാർഗ പാസ്</string>
+    <string name="retake">വീണ്ടും എടുക്കുക</string>
+    <string name="storagepermission">അനുമതി ആവശ്യമാണ്</string>
+    <string name="add">ചേർക്കുക</string>
+    <string name="avss">എ.വി.എസ്.എസ് പോട്ടോമാവ്</string>
+    <string name="venkala">വെങ്കോല പി.ഒ, പിൻ:691541,</string>
+    <string name="registration">രജിസ്റ്റർ നമ്പർ: 561 2/2001–02,</string>
+    <string name="pottamvu">പോട്ടോമാവ്</string>
+    <string name="passno">"പാസ് നമ്പർ.: "</string>
+    <string name="mfp">എം.എഫ്.പി ശേഖരണ  പാസ്  </string>
+    <string name="nameandaddress"><![CDATA[Name &amp; Address]]></string>
+    <string name="wheretogo">എവിടേക്കാണ് പോകുന്നത്</string>
+    <string name="datefromto">തീയതി മുതൽ / വരെ</string>
+    <string name="xyzcollector">എബിസി കളക്ടർ \nവെങ്കോല പി.ഒ,\പോട്ടോമാവ്</string>
+    <string name="daterange">03–02–2021\n05-02-2021</string>
+    <string name="president">പ്രസിഡന്റ്</string>
+    <string name="secretary">സെക്രട്ടറി</string>
+    <string name="generatepdf">പി.ഡി.എഫ്  നിർമ്മിക്കുക </string>
+    <string name="trainingmaterials">പരിശീലന സാമഗ്രികൾ</string>
+    <string name="sustainableharvesting">സുസ്ഥിര വിളവെടുപ്പ്</string>
+    <string name="name">"പേര് "</string>
+    <string name="xyz">എബിസി കളക്ടർ</string>
+    <string name="aadhar">അധാർ കാർഡ്</string>
+    <string name="idcard">ഐഡി കാർഡ്</string>
+    <string name="clickagain">പുറത്തുകടക്കാൻ വീണ്ടും അമർത്തുക</string>
+    <string name="ack">അംഗീകാരങ്ങൾ</string>
+    <string name="learnings">പഠനം/പഠനങ്ങൾ </string>
+    <string name="menu">തിരഞ്ഞെടുക്കുക</string>
+    <string name="submenu">ഉപ മെനു</string>
+    <string name="pass">പാസ്</string>
+    <string name="materials">സാമഗ്രികൾ</string>
+    <string name="tutorials">പരിശീലനങ്ങൾ</string>
+    <string name="pleaseselectlang">ഭാഷ തിരഞ്ഞെടുക്കുക</string>
+    <string name="selectrole">നിങ്ങൾ പങ്ക് തിരഞ്ഞെടുക്കേണ്ടതുണ്ട്</string>
+    <string name="incharge">ആർ.എഫ്.ഒ ഇൻചാർജ്</string>
+    <string name="accepted">സ്വീകരിച്ചു</string>
+    <string name="rejected">നിരസിച്ചു</string>
+    <string name="pending">തീർപ്പാക്കിയിട്ടില്ല</string>
+    <string name="required">" ആവശ്യമാണ്"</string>
+    <string name="selectanyoption">ഏതെങ്കിലും തിരഞ്ഞെടുക്കുക</string>
+    <string name="nointernet">ഇന്റർനെറ്റ് കണക്ഷനില്ല..</string>
+    <string name="afternoon">നല്ല ഉച്ച ആശംസിക്കുന്നു,</string>
+    <string name="evening">നല്ല വൈകുന്നേരം ആശംസിക്കുന്നു,</string>
+    <string name="night">ശുഭരാത്രി,</string>
+    <string name="collectdfrom">"വില്ലേജിൽ നിന്ന് ശേഖരിച്ചത്  "</string>
+    <string name="under">" കീഴെ "</string>
+    <string name="fillalldata">എല്ലാ ഡാറ്റയും പൂരിപ്പിക്കുക</string>
+    <string name="collectordetails">ശേഖരിക്കുന്നവരുടെ വിവരങ്ങൾ</string>
+    <string name="wait">പ്രോസസ്സ് പൂർത്തിയാകുന്നതുവരെ കാത്തിരിക്കുക</string>
+    <string name="synced">സെർവറിലേക്ക് സമന്വയിപ്പിച്ചു</string>
+    <string name="servernotresponding">സെർവർ പ്രതികരിക്കുന്നില്ല...</string>
+    <string name="datamissing">ചില ഡാറ്റ കാണുന്നില്ല, കുറച്ച് സമയത്തിന് ശേഷം ശ്രമിക്കുക</string>
+    <string name="updateinventory">സാധന സാമഗ്രികൾ അപ്‌ഡേറ്റുചെയ്യുക</string>
+    <string name="paid">പണമടച്ചു</string>
+    <string name="fetched">കൊണ്ടുവന്നു</string>
+    <string name="recieved">ലഭിച്ചു</string>
+    <string name="totalstock">"ലഭ്യമായ ആകെ സ്റ്റോക്ക്, "</string>
+    <string name="norfo">ആർ.എഫ്.ഒ-നെ കണ്ടെത്തിയിട്ടില്ല</string>
+    <string name="nodata">ഡാറ്റ ഒന്നും  കണ്ടെത്തിയിട്ടില്ല..</string>
+    <string name="sent">"അയച്ചു  "</string>
+    <string name="invechile">" വാഹനത്തിൽ "</string>
+    <string name="updateShipment">കയറ്റുമതി അപ്‌ഡേറ്റുചെയ്യുക</string>
+    <string name="chooseyourrole">നിങ്ങളുടെ സ്ഥാനപ്പേര് തിരഞ്ഞെടുക്കുക</string>
+    <string name="rfo">ആർ.എഫ്.ഒ</string>
+    <string name="vssrole">വി.എസ്.എസ്</string>
+    <string name="prev">തിരികെ</string>
+    <string name="next">അടുത്തത്</string>
+    <string name="login">ലോഗിൻ</string>
+    <string name="forgotpassword">പാസ്‍വേർഡ് മറന്നു</string>
+    <string name="needtochnagerole">സ്ഥാനപ്പേര് മാറ്റേണ്ടതുണ്ടോ?</string>
+    <string name="logginginas">"ഇതുപോലെ ലോഗിൻ ചെയ്യുന്നു  "</string>
+    <string name="status">സ്ഥിതിവിവരം</string>
+    <string name="cancel">റദ്ദാക്കുക</string>
+    <string name="date">തീയതി</string>
+    <string name="accept">അംഗീകരിക്കുക</string>
+    <string name="reject">നിരസിക്കുക</string>
+    <string name="remarks">അഭിപ്രായങ്ങൾ ചേർക്കുക</string>
+    <string name="selectdate">തീയതി തിരഞ്ഞെടുക്കുക</string>
+    <string name="verified">പരിശോധിച്ചുറപ്പിച്ചു</string>
+    <string name="sucess">വിജയം</string>
+    <string name="recheckpass">നിങ്ങളുടെ ഉപയോക്തൃനാമം / പാസ്‌വേഡ് വീണ്ടും പരിശോധിക്കുക</string>
+    <string name="paymentsList">പണമിടപാടിൻറെ പട്ടിക</string>
+    <string name="selectntfptype">എൻ.ടി.എഫ്.പി  തരം തിരഞ്ഞെടുക്കുക</string>
+    <string name="filter">തിരഞ്ഞെടുക്കുക</string>
+    <string name="back">തിരികെ</string>
+    <string name="To">To: </string>
+    <string name="submit" translatable="true">സമർപ്പിക്കുക</string>
+    <string name="from" translatable="true">From: </string>
+    <string name="transitpassdata">വിഭവങ്ങൾ അയച്ചത് </string>
+    <string name="purchase">വാങ്ങൽ</string>
+    <string name="sales">വിൽപ്പന</string>
+    <string name="alreadyhaveacc">ഇതിനകം അക്കൗണ്ട് ഉണ്ടായിരുന്നോ? ലോഗിൻ</string>
+
+    <string name="inchargeno">ഇൻചാർജ് നമ്പർ</string>
+    <string name="dobformat">ജനനത്തീയതി (YYY-MM-DD)</string>
+    <string name="newpassword">പുതിയ പാസ്വേഡ്</string>
+    <string name="retypepassword">പാസ്വേഡ് വീണ്ടും ടൈപ്പുചെയ്യുക</string>
+    <string name="passdidntmatch">പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല</string>
+    <string name="resetpassword">പാസ്സ്‌വേർഡ് പുനർസജീവമാക്കുക</string>
+    <string name="failed">പരാജയപ്പെട്ടു</string>
+    <string name="importsuccess">വിജയകരമായി ചെയ്തു</string>
+    <string name="excelerror">ഈ എക്സൽ നല്ല ഫോർമാറ്റിലല്ല</string>
+    <string name="importing">ഇറക്കുമതി ചെയ്യുന്നു...</string>
+    <string name="uploadagain">വീണ്ടും അപ്‌ലോഡുചെയ്യുക</string>
+    <string name="somedetailsnotsynced">ചില വിശദാംശങ്ങൾ സമന്വയിപ്പിച്ചില്ല</string>
+    <string name="viewallpayments">എല്ലാ പേയ്‌മെന്റുകളും കാണുക</string>
+    <string name="youcantedithere">നിങ്ങൾക്ക് ഇവിടെ നിന്ന് എഡിറ്റുചെയ്യാൻ കഴിയില്ല</string>
+    <string name="close">അടയ്‌ക്കുക</string>
+    <string name="makepayments">പേയ്‌മെന്റുകൾ നടത്തുക</string>
+    <string name="deleted">ഇല്ലാതാക്കി</string>
+    <string name="recievedpayments">"സ്വീകരിച്ച പണം "</string>
+    <string name="selectall">എല്ലാം തിരഞ്ഞെടുക്കുക</string>
+    <string name="deselectall">തിരഞ്ഞെടുത്ത എല്ലാം മായ്ക്കുക</string>
+    <string name="nonetwork">നെറ്റ്‌വർക്ക് ഇല്ല</string>
+    <string name="internetisrequired">തുടരാൻ ഇന്റർനെറ്റ് ആവശ്യമാണ്</string>
+    <string name="pleasecheckthedetails">നൽകിയിരിക്കുന്ന വിശദാംശങ്ങൾ പരിശോധിക്കുക</string>
+    <string name="selectprofilephoto">പ്രൊഫൈൽ ഫോട്ടോ തിരഞ്ഞെടുക്കുക</string>
+    <string name="camera">ക്യാമറ</string>
+    <string name="gallery">ഗാലറി</string>
+    <string name="importerror">"ഇറക്കുമതി പിശക് "</string>
+    <string name="acceptedandshipped">സ്വീകരിച്ച് അയച്ചു</string>
+    <string name="nooftransits">സംക്രമണങ്ങളുടെ എണ്ണം</string>
+    <string name="synchronise">സമന്വയിപ്പിക്കുക</string>
+    <string name="transitrequests">യാത്രാമാർഗ അഭ്യർത്ഥനകൾ</string>
+    <string name="selectransitpass">യാത്രാമാർഗ പാസ് തിരഞ്ഞെടുക്കുക</string>
+    <string name="editpayment">പണമിടപാടുകൾ തിരഞ്ഞെടുക്കുക</string>
+    <string name="ntfp">എൻ.ടി.എഫ്.പി</string>
+    <string name="quantity">അളവ്</string>
+    <string name="ok">ശരി</string>
+    <string name="unit">യൂണിറ്റ്</string>
+    <string name="sysncronising">ദയവായി നിങ്ങളുടെ ഡാറ്റ ഞങ്ങൾ സമന്വയിപ്പിക്കുന്നുവെന്ന് കാത്തിരിക്കുക, ഈ പ്രക്രിയയ്‌ക്ക് സമയമെടുക്കുമ്പോൾ തന്നെ ആപ്ലിക്കേഷൻ അടയ്‌ക്കരുത്</string>
+    <string name="foundsomeissues">ഡാറ്റ ലഭ്യമാക്കുമ്പോൾ ചില പ്രശ്നങ്ങൾ കണ്ടെത്തി</string>
+    <string name="pcack">പിസി അംഗീകാരങ്ങൾ</string>
+    <string name="selectmajorntfps">പ്രധാന എൻ‌ടി‌എഫ്‌പി തിരഞ്ഞെടുക്കുക*</string>
+    <string name="selectntfp">എൻ‌ടി‌എഫ്‌പി തിരഞ്ഞെടുക്കുക</string>
+    <string name="stockrequest">സ്അഭ്യർത്ഥന സമർപ്പിക്കുക</string>
+    <string name="anintiative">ഒരു സംരംഭം</string>
+    <string name="selectpc">പ്രോസസ്സിംഗ് സെന്റർ തിരഞ്ഞെടുക്കുക</string>
+    <string name="stocktovss">വി‌എസ്‌എസിലേക്കുള്ള സ്റ്റോക്ക്</string>
+    <string name="selectupdateordelete">അപ്‌ഡേറ്റ് ചെയ്യുക അല്ലെങ്കിൽ ഇല്ലാതാക്കുക തിരഞ്ഞെടുക്കുക</string>
+    <string name="update">അപ്‌ഡേറ്റ് ചെയ്യുക</string>
+    <string name="delete">ഇല്ലാതാക്കുക</string>
+    <string name="paidfor">"പണമടച്ചത്: "</string>
+    <string name="amountof">"തുക: "</string>
+    <string name="quantityfor">" അളവ്: "</string>
+    <string name="tofor">" to: "</string>
+    <string name="shipmentno">"കയറ്റുമതി നമ്പർ: "</string>
+    <string name="fromfor">"From: "</string>
+    <string name="rupees">രൂപ</string>
+    <string name="noresources">ഡാറ്റയൊന്നും കണ്ടെത്തിയില്ല</string>
+    <string name="nodatafoundforentry">ഈ എൻ‌ട്രിക്കായി വിവരങ്ങളൊന്നും കണ്ടെത്തിയില്ല</string>
+    <string name="selectaceptorreject">അംഗീകരിക്കുക / നിരസിക്കുക തിരഞ്ഞെടുക്കുക</string>
+    <string name="acked">അംഗീകാരങ്ങൾ</string>
+    <string name="expired">കാലഹരണപ്പെട്ടു</string>
+    <string name="passstatus">വരെ സാധുവാണ് </string>
+    <string name="profileURL">http://13.127.166.242/NTFPProfilePictures/</string>
+    <string name="baseURL">http://13.127.166.242/</string>
+    <string name="type_to_search">തിരയാൻ ടൈപ്പ് ചെയ്യുക</string>
+    <string name="selectntfpgrade">എൻ.ടി.എഫ്.പി ഗ്രേഡ് തിരഞ്ഞെടുക്കുക*</string>
+    <string name="action_settings">ക്രമീകരണങ്ങൾ</string>
+    <string name="pdf_url">പി.ഡി.എഫ് യു.ആർ.ൽ</string>
+    <string name="permission_request_message">പിഡിഎഫ് സംരക്ഷിക്കാൻ സംഭരണ അനുമതി ഞങ്ങളെ അനുവദിക്കുന്നു.</string>
+    <string name="vss_name">വിഎസ്എസ് പേര്</string>
+    <string name="userid">ഐഡി കാർഡ് നമ്പർ</string>
+    <string name="passes">ഉപയോക്തൃ അക്കൗണ്ട് വിശദാംശങ്ങൾ</string>
+    <string name="ntfpdeposits">എൻ.ടി.എഫ്.പി നിക്ഷേപങ്ങൾ</string>
+    <string name="amountpaid" translatable="true">കണക്കാക്കിയ തുക(രൂപ)*</string>
+    <string name="enterscstcategory">"എസ്.സി.എസ്.ടി ഫെഡറേഷൻ നിർവചിക്കുക"</string>
+    <string name="goodmorning">സ്വാഗതം,</string>
+    <string name="approvedrejected">അംഗീകരിച്ചു / നിരസിച്ചു</string>
+    <string name="processing_centre_confirmation">സ്ഥീതികരണം (പ്രോസസ്സിംഗ് സെന്റർ)</string>
+    <string name="confirm">സ്ഥിരീകരിക്കുക</string>
+
+    <string name="vsshead" translatable="true">വിഎസ്എസ് സെക്രട്ടറി</string>
+    <array name="transitfor">
+        <item>Select Transit To</item>
+        <item>പ്രോസസ്സിംഗ് സെന്റർ</item>
+        <item>എസ്.സി.എസ്.ടി ഫെഡറേഷൻ</item>
+        <item>വേറെ (വ്യക്തമാക്കുക)</item>
+    </array>
+    <string name="transitfor">ട്രാൻസിറ്റ് എവിടേക്ക്</string>
+    <string name="other">വേറെ (വ്യക്തമാക്കുക)</string>
+    <string name="vehicletype">"വാഹന തരം"</string>
+    <string name="save">സമർപ്പിക്കുക</string>
+    <string name="addfamilydetails">കുടുംബ വിശദാംശങ്ങൾ ചേർക്കുക</string>
+    <string name="addfamilymember">കുടുംബാംഗങ്ങളെ ചേർക്കുക</string>
+    <string name="familydetails">കുടുംബ വിശദാംശങ്ങൾ</string>
+    <string name="relationship">ബന്ധം</string>
+    <string name="namefamily">പേര് *</string>
+    <string name="address">വിലാസം</string>
+    <array name="measurementKG">
+        <item>Select Measurement</item>
+        <item>കിലോഗ്രാം</item>
+        <item>ഗ്രാം</item>
+        <item>Litre</item>
+        <item>Millilitre</item>
+    </array>
+    <array name="measurementLiter">
+        <item>Select Measurement</item>
+        <item>Litre</item>
+        <item>Millilitre</item>
+    </array>
+    <array name="vehicletype">
+        <item>Select Vehicle type</item>
+        <item>കാർ</item>
+        <item>ബസ്</item>
+        <item>ട്രക്ക്</item>
+        <item>വാൻ</item>
+        <item>സൈക്കിൾ</item>
+        <item>ജീപ്പ്</item>
+        <item>പിക്ക് അപ്പ്</item>
+        <item>Other</item>
+    </array>
+    <array name="addfamily">
+        <item>Select </item>
+        <item>അതെ</item>
+        <item>ഇല്ല</item>
+    </array>
+    <array name="sampleSpinnerEd">
+        <item>select qualification</item>
+        <item>Illiterate</item>
+        <item>primary</item>
+        <item>10th</item>
+        <item >12th</item>
+        <item>graduation</item>
+        <item>post graduation</item>
+    </array>
+    <array name="relation">
+        <item>Select Relation</item>
+        <item>അച്ഛൻ</item>
+        <item>അമ്മ</item>
+        <item>മകൾ</item>
+        <item>മകൻ</item>
+        <item>ജീവിത പങ്കാളി</item>
+    </array>
+    <string name="familydetailsnotsynced">കുടുംബ ഡാറ്റ സമന്വയിപ്പിച്ചിട്ടില്ല</string>
+    <string name="familysynced">കുടുംബ ഡാറ്റ സെർവറിലേക്ക് സമന്വയിപ്പിച്ചു</string>
+    <string name="selectMember">അംഗം തിരഞ്ഞെടുക്കുക</string>
+    <string name="Are_you_sure_do_you_want_to_Logout">നിങ്ങൾക്ക് ലോഗ്ഔട്ട് ചെയ്യണമെന്ന് തീർച്ചയാണോ</string>
+    <string name="pleaseselecttransitfor">Please Select Transit Data</string>
+    <string name="select_ntfp_data">Select Ntfp Data</string>
+    <string name="repassword">"Confirm new password     "</string>
+    <string name="kerala_forests_and_wildlife_department">Kerala Forests and\nWildlife Department</string>
+
+</resources>

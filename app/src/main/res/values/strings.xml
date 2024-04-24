@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="sampleSpinner">
+        <item>Select Social Category</item>
+        <item>SC</item>
+        <item>ST</item>
+        <item>General</item>
+    </array>
+    <array name="measurementKG">
+        <item>Select Measurement</item>
+        <item>Kilogram</item>
+        <item>Gram</item>
+        <item>Litre</item>
+        <item>Millilitre</item>
+    </array>
+    <array name="measurementLiter">
+        <item>Select Measurement</item>
+        <item>Litre</item>
+        <item>Millilitre</item>
+    </array>
+    <array name="addfamily">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
+    </array>
+    <array name="sampleSpinnerEd">
+    <item>select qualification</item>
+    <item>Illiterate</item>
+    <item>primary</item>
+    <item>10th</item>
+    <item >12th</item>
+    <item>graduation</item>
+    <item>post graduation</item>
+    </array>
+    <array name="relation">
+        <item>Select Relation</item>
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Daughter</item>
+        <item>Son</item>
+        <item>Spouse</item>
+    </array>
+    <array name="vehicletype">
+        <item>Select Vehicle type</item>
+        <item>Car</item>
+        <item>Bus</item>
+        <item>Truck</item>
+        <item>Van</item>
+        <item>Bicycle</item>
+        <item>Jeep</item>
+        <item>PickUp</item>
+        <item>Other</item>
+    </array>
+    <array name="gender">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+    </array>
+    <array name="IDtype">
+        <item>Select ID Type</item>
+        <item>Aadhaar Card</item>
+        <item>Voter ID</item>
+        <item>Driving Licence</item>
+    </array>
+    <array name="transit_report">
+        <item>Select any Issue</item>
+        <item>NTFP quantity isnt correct</item>
+        <item>NTFP Items list is not matching with available content</item>
+        <item>NTFP names arent correct</item>
+        <item>NTFPs weight isnt correct</item>
+        <item>Other</item>
+    </array>
+    <array name="vss_report">
+        <item>Select any Issue</item>
+        <item>NTFPs Received quantity isnt correct</item>
+        <item>NTFP wastage quantity isnt correct</item>
+        <item>NTFP quantity isnt correct</item>
+        <item>NTFPs are missing from the list</item>
+        <item>Other</item>
+    </array>
+    <array name="dfo_report">
+        <item>Select any Issue</item>
+        <item>NTFP Purchase Quantity isnt correct</item>
+        <item>NTFP Purchase Date information isnt correct</item>
+        <item>Other</item>
+    </array>
+
+    <array name="transit_titles">
+        <item>NTFP</item>
+        <item>Quantity</item>
+        <item>Member ID </item>
+    </array>
+
+    <array name="transit_titles2">
+        <item>NTFP</item>
+        <item>Quantity</item>
+        <item>Collector Name</item>
+    </array>
+    <array name="transit_titles3">
+        <item>NTFP</item>
+        <item>Quantity</item>
+        <item>Member Name</item>
+    </array>
+
+    <array name="vss_transit_titles">
+        <item>NTFP</item>
+        <item>Quantity</item>
+        <item>Grade</item>
+    </array>
+    <array name="dfo_titles">
+        <item>NTFP</item>
+        <item>Grade1</item>
+        <item>Grade2</item>
+        <item>Grade3</item>
+        <item>TotalCost</item>
+    </array>
+
+    <array name="status_spinner_accepted">
+        <item>Select Status</item>
+        <item>Accepted</item>
+        <item>Rejected</item>
+    </array>
+    <array name="status_spinner_approved">
+        <item>Select Status</item>
+        <item>Approved</item>
+        <item>Rejected</item>
+    </array>
+    <array name="status_spinner_all">
+        <item>Select Status</item>
+        <item>Approved</item>
+        <item>Pending</item>
+        <item>Rejected</item>
+    </array>
+    <array name="vss_titles">
+        <item>NTFP</item>
+        <item>Unit</item>
+        <item>Quantity</item>
+        <item>Wastage</item>
+    </array>
+
+    <array name="ntfp_type">
+        <item>Select NTFP Type</item>
+        <item>Bark</item>
+        <item>Roots</item>
+        <item>Leaf</item>
+        <item>Fruit</item>
+        <item>Flower</item>
+        <item>Seeds</item>
+    </array>
+
+    <array name="ntfp_grade">
+        <item>Select NTFP Grade</item>
+        <item>Grade1</item>
+        <item>Grade2</item>
+        <item>Grade3</item>
+    </array>
+
+
+    <array name="transitfor">
+        <item>Select Transit To</item>
+        <item>Processing Center</item>
+        <item>ScSt Federation</item>
+        <item>Other(Specify)</item>
+    </array>
+    <string name="app_name" translatable="false">Vanasree</string>
+
+    <string name="splash_note2" translatable="false">Developed and Maintained by Gisfy Pvt Ltd for Vanasree</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="email" translatable="false">Username</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="welcomenote" translatable="false">Welcome</string>
+    <string name="title_collectors_list" translatable="false">Kishore Kethineni</string>
+    <string name="title2_collectors_list" translatable="false">Thiruvananthapuram</string>
+    <string name="title3_collectors_list" translatable="false">Kerala Forest Department is a law enforcement agency for the state of Kerala, India. Over 75% of the land area of Kerala was covered by forests until the 18th century.</string>
+    <string name="default_notification_channel_id" translatable="false">DefaultFCMChannel</string>
+    <string name="basicdetails" translatable="false">Basic Details</string>
+    <string name="vssname" translatable="false">VSS Name*</string>
+    <string name="divisionname" translatable="false">Division Name*</string>
+
+    <string name="rangename" translatable="false">Range Name*</string>
+    <string name="villagename" translatable="false">Village Name*</string>
+    <string name="collectorname" translatable="false">Collector Name*</string>
+    <string name="collectornamep" translatable="false">Collector Name</string>
+    <string name="spoucename" translatable="false">Spouse Name*</string>
+    <string name="spoucenamep" translatable="true">Spouse Name</string>
+    <string name="socialcat" translatable="false">Select Social Category*</string>
+    <string name="age" translatable="false">Age*</string>
+    <string name="gender" translatable="false">Select Gender*</string>
+    <string name="dob" translatable="false">DOB*</string>
+    <string name="idtype" translatable="false">Select ID type*</string>
+    <string name="idno" translatable="false">ID No.*</string>
+    <string name="selectntfps" translatable="false">You need to select NTFP\'s*</string>
+    <string name="educational" translatable="false">Educational Qualification*</string>
+    <string name="familymem" translatable="false">Total No of Family Members*</string>
+    <string name="bankname" translatable="false">Bank Name</string>
+    <string name="accno" translatable="false">Account No</string>
+    <string name="ifsc" translatable="false">IFSC</string>
+    <string name="username" translatable="false">User Name*</string>
+    <string name="info" translatable="false">Other relavent info</string>
+    <string name="addcollector" translatable="false">Add Collector</string>
+    <string name="importexcel" translatable="false">Add from Excel</string>
+    <string name="imports" translatable="false">Import</string>
+    <string name="collectorList" translatable="false">Collector List</string>
+    <string name="stockdetails" translatable="false">Item Details</string>
+    <string name="selectcollector" translatable="false">Select Collector*</string>
+    <string name="measurement" translatable="false">Unit of Measurement*</string>
+    <string name="quality" translatable="false">Quantity</string>
+    <string name="dashboard" translatable="false">Dashboard</string>
+    <string name="piechart" translatable="false">PieChart Data</string>
+    <string name="barchart" translatable="false">BarChart Data</string>
+    <string name="linechart" translatable="false">LineChart Data</string>
+    <string name="amountpaid" translatable="false">Estimated Amount(Rs)*</string>
+    <string name="addinv" translatable="false">Add Item</string>
+    <string name="listinv" translatable="false">List Inventories</string>
+    <string name="paymentdetails" translatable="false">Payment Details</string>
+    <string name="addPayment" translatable="false">Add Payment</string>
+    <string name="amountrecieved" translatable="false">Amount Received</string>
+    <string name="amountrecievedfrom" translatable="false">Amount Received from</string>
+    <string name="thirparty" translatable="false">Third-Party</string>
+    <string name="stsociety" translatable="false">S.T. Society</string>
+    <string name="societyname" translatable="false">Society Name*</string>
+    <string name="updatepayment" translatable="false">Update Payment Details</string>
+    <string name="listpayment" translatable="false">Payment List</string>
+    <string name="transitrequest" translatable="false">Transit Request</string>
+    <string name="swipeup" translatable="false">Swipe Up</string>
+    <string name="selectrfo" translatable="false">Select RFO for transit permission*</string>
+    <string name="requesttransitpass" translatable="false">Request Transit</string>
+    <string name="shipmentdetails" translatable="false">Shipment Details</string>
+    <string name="selecttransitpass" translatable="false">Select Transit Request*</string>
+    <string name="selectprocessingcenter" translatable="false">Select Processing Center*</string>
+    <string name="meansoftransportation" translatable="false">Means of transportation*</string>
+    <string name="vehicleno" translatable="false">Vehicle No.</string>
+    <string name="addshipment" translatable="false">Add Shipment</string>
+    <string name="shipmentList" translatable="false">Shipment List</string>
+    <string name="collectors" translatable="false">Collector</string>
+    <string name="inventory" translatable="false">Item</string>
+    <string name="shipment" translatable="false">Shipments</string>
+    <string name="payment" translatable="false">Payments</string>
+    <string name="viewcollecotrs" translatable="false">View Collectors</string>
+    <string name="viewstocks" translatable="false">View Stocks</string>
+    <string name="addtransitrequest" translatable="false">Add Transit Request</string>
+    <string name="viewtransit" translatable="false">View Transit Requests</string>
+    <string name="viewshipment" translatable="false">View Shipment</string>
+    <string name="newpayments" translatable="false">Make Payments</string>
+    <string name="paymentsrecieved" translatable="false">Add Payments Received</string>
+    <string name="viewpayments" translatable="false">View Payments Received</string>
+    <string name="profile" translatable="false">Profile</string>
+    <string name="logout" translatable="false">Logout</string>
+    <string name="division" translatable="false">"Division "</string>
+    <string name="range" translatable="false">"Range "</string>
+
+
+    <string name="village" translatable="false">"Village "</string>
+    <string name="vss" translatable="false">"VSS Name: "</string>
+    <string name="vsshead" translatable="false">VSS Secretary</string>
+    <string name="phoneno" translatable="false">Phone Number</string>
+    <string name="unabletofetch">Unable to fetch details</string>
+    <string name="somethingwentwrong">Some thing went wrong</string>
+    <string name="updatecollector">Update Collector</string>
+    <string name="ack1" translatable="false">Acknowledgements Data (from PROCESSING CENTER to VSS)</string>
+    <string name="ack2" translatable="false">Acknowledgements Data (from PROCESSING CENTER to DFO)</string>
+    <string name="transitlist" translatable="false">Transit List</string>
+    <string name="todfo" translatable="false">Processing centre acknowledgments</string>
+    <string name="tovss" translatable="false">PC to VSS List</string>
+    <string name="transitpass" translatable="false">Transit Request</string>
+    <string name="retake">Retake</string>
+    <string name="storagepermission">Permission Required</string>
+    <string name="add">Add</string>
+    <string name="avss">AVSS Pottomavu</string>
+    <string name="venkala">Venkola P.O, Pin:691541,</string>
+    <string name="registration">Register Number: 561 2/2001–02,</string>
+    <string name="pottamvu">Pottomavu</string>
+    <string name="passno">"Pass No.: "</string>
+    <string name="mfp">MFP Collection Pass</string>
+    <string name="nameandaddress"><![CDATA[Name &amp; Address]]></string>
+    <string name="wheretogo">Where to go</string>
+    <string name="datefromto">Date From/To</string>
+    <string name="xyzcollector">XYZ Collector\nVenkala P.O,\nPottomavu</string>
+    <string name="daterange">03-02-2021\n05-02-2021</string>
+    <string name="president">President</string>
+    <string name="secretary">Secretary</string>
+    <string name="generatepdf">Generate PDF</string>
+    <string name="trainingmaterials">Training Materials</string>
+    <string name="sustainableharvesting">Sustainable Harvesting</string>
+    <string name="name">"Name "</string>
+    <string name="xyz">XYZ Collector</string>
+    <string name="aadhar">Aadhar Card</string>
+    <string name="idcard">ID Card</string>
+    <string name="clickagain">Click again to exit</string>
+    <string name="goodmorning">Welcome,</string>
+    <string name="ack">Acknowledgements</string>
+    <string name="learnings">Learning\'s</string>
+    <string name="passes">User Account Details</string>
+    <string name="menu">Menu</string>
+    <string name="submenu">Sub Menu</string>
+    <string name="pass">Pass</string>
+    <string name="materials">Materials</string>
+    <string name="tutorials">Tutorials</string>
+    <string name="pleaseselectlang">Please select language</string>
+    <string name="selectrole">You need to select role</string>
+    <string name="incharge">RFOIncharge</string>
+    <string name="inchargeno">Incharge No</string>
+    <string name="accepted">Accepted</string>
+    <string name="rejected">Rejected</string>
+    <string name="pending">Pending</string>
+    <string name="required">" is required"</string>
+    <string name="selectanyoption">please select any option from list</string>
+    <string name="nointernet">No Internet Connection..</string>
+    <string name="afternoon">Good AfterNoon,</string>
+    <string name="evening">Good Evening,</string>
+    <string name="night">Good Night,</string>
+    <string name="collectdfrom">"Collected from village "</string>
+    <string name="under">" under "</string>
+    <string name="fillalldata">Fill all data</string>
+    <string name="collectordetails">Collector details</string>
+    <string name="wait">wait till process finish</string>
+    <string name="synced">Synced to server</string>
+    <string name="familysynced">Family Data Synced to server</string>
+
+    <string name="servernotresponding">Server was not responding...</string>
+    <string name="datamissing">some data is missing please try after some time</string>
+    <string name="updateinventory">Update Item</string>
+    <string name="paid">Paid</string>
+    <string name="fetched">Fetched</string>
+    <string name="recieved">Received</string>
+    <string name="totalstock">"Total available stock is, "</string>
+    <string name="norfo">No RFO found</string>
+    <string name="nodata">No data found..</string>
+    <string name="sent">"Sent  "</string>
+    <string name="invechile">" in vehicle to "</string>
+    <string name="updateShipment">Update Shipment</string>
+    <string name="chooseyourrole">Choose your role</string>
+    <string name="rfo">RFO</string>
+    <string name="vssrole">VSS</string>
+    <string name="prev">Prev</string>
+    <string name="next">Next</string>
+    <string name="login">LogIn</string>
+    <string name="forgotpassword">Forgot Password</string>
+    <string name="needtochnagerole">Login as different user?</string>
+    <string name="logginginas">"Login "</string>
+    <string name="filter">Filter</string>
+    <string name="status">Status</string>
+    <string name="cancel">Cancel</string>
+    <string name="date">Date</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="remarks">Add Remarks</string>
+    <string name="selectdate">Select Date</string>
+    <string name="verified">Verified</string>
+    <string name="sucess">Success</string>
+    <string name="recheckpass">Please recheck your username/password</string>
+    <string name="paymentsList">Payments List</string>
+    <string name="selectntfptype">Select NTFP Type*</string>
+    <string name="back">Back</string>
+
+    <string name="submit" translatable="true">Submit</string>
+
+    <string name="from" translatable="true">From: </string>
+
+    <string name="To">To: </string>
+
+    <string name="transitpassdata">Transit Request Data</string>
+
+    <string name="purchase">Purchase</string>
+
+    <string name="sales">Sales</string>
+    <string name="alreadyhaveacc">Already had account? login</string>
+    <string name="dobformat">DOB (YYYY-MM-DD)</string>
+    <string name="newpassword">New Password</string>
+    <string name="retypepassword">Retype password</string>
+    <string name="passdidntmatch">Passwords didn\'t match</string>
+    <string name="resetpassword">Reset Password</string>
+    <string name="failed">Failed</string>
+    <string name="importsuccess">Successfully Imported</string>
+    <string name="excelerror">This Excel is not in a good format</string>
+    <string name="importing">Importing…</string>
+    <string name="uploadagain">Upload Again</string>
+    <string name="somedetailsnotsynced">Data were not synced</string>
+    <string name="familydetailsnotsynced">Family data were not synced</string>
+
+    <string name="viewallpayments">View all Payments</string>
+    <string name="youcantedithere">You cannot edit from here</string>
+    <string name="close">Close</string>
+    <string name="makepayments">Make Payments</string>
+    <string name="deleted">Deleted</string>
+    <string name="recievedpayments">"Received Payments "</string>
+    <string name="selectall">Select All</string>
+    <string name="deselectall">Deselect All</string>
+    <string name="nonetwork">No Network</string>
+    <string name="internetisrequired">Internet is required to continue</string>
+    <string name="pleasecheckthedetails">Please check the details provided</string>
+    <string name="selectprofilephoto">Select Profile Photo</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="importerror">"Import Error "</string>
+    <string name="acceptedandshipped">Accepted and Shipped</string>
+    <string name="nooftransits">No of Transits</string>
+    <string name="synchronise">Synchronise</string>
+    <string name="transitrequests">Transit Requests</string>
+    <string name="selectransitpass">Select Transit Pass</string>
+    <string name="editpayment">Edit Payment</string>
+    <string name="ntfp">NTFP</string>
+    <string name="unit">Unit</string>
+    <string name="quantity">Quantity</string>
+    <string name="ok">OK</string>
+    <string name="passstatus">Valid till </string>
+    <string name="sysncronising">Please wait we are synchronizing your data\nThis process may take while until please don\'t close the application</string>
+    <string name="foundsomeissues">Found some issues while fetching the data</string>
+    <string name="pcack">PC Acknowledgements</string>
+    <string name="selectmajorntfps">Select Major NTFP\'s*</string>
+    <string name="selectntfp">Select NTFP</string>
+    <string name="stockrequest">Submit Request</string>
+    <string name="ntfpdeposits">NTFP Deposits</string>
+
+    <string name="anintiative">An Initiative of</string>
+    <string name="selectpc">Select Processing Center</string>
+    <string name="stocktovss">Stock to VSS</string>
+    <string name="selectupdateordelete">Select Update or Delete</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="paidfor">"Paid for: "</string>
+    <string name="amountof">"Amount: "</string>
+    <string name="quantityfor">" Quantity: "</string>
+    <string name="tofor">" to: "</string>
+    <string name="shipmentno">"Shipment No: "</string>
+    <string name="fromfor">"From: "</string>
+    <string name="rupees">Rupees</string>
+    <string name="noresources">No Data Found</string>
+    <string name="nodatafoundforentry">No info found for this entry</string>
+    <string name="selectaceptorreject">Select Accept or Reject</string>
+    <string name="acked">Acknowledged</string>
+    <string name="expired">Expired</string>
+    <string name="other">Other(Specify)</string>
+    <string name="transitfor">Transit To</string>
+    <string name="enterscstcategory">"Enter ScSt Federation "</string>
+    <string name="pleaseselecttransitfor">Please Select Transit Data</string>
+    <string name="profileURL">http://vanasree.com/NTFPProfilePictures/</string>
+    <string name="baseURL">http://vanasree.com/</string>
+    <string name="type_to_search">Type to search</string>
+    <string name="selectntfpgrade">Select NTFP Grade*</string>
+    <string name="action_settings">Settings</string>
+    <string name="pdf_url">PDF URL</string>
+    <string name="permission_request_message">Storage permission allows us to save pdf.</string>
+    <string name="vss_name">VSS Name </string>
+    <string name="userid">ID Card No </string>
+    <string name="approvedrejected">Approved / Rejected</string>
+    <string name="processing_centre_confirmation">Processing Centre Confirmation</string>
+    <string name="confirm">Confirm</string>
+    <string name="vehicletype">"Vehicle Type "</string>
+    <string name="save">Save</string>
+    <string name="addfamilydetails">Add Family Details</string>
+    <string name="addfamilymember">Add Family Member</string>
+    <string name="familydetails">Family Details</string>
+    <string name="relationship">Relationship</string>
+    <string name="namefamily">Name *</string>
+    <string name="address">Address</string>
+    <string name="selectMember">Select Member</string>
+    <string name="Are_you_sure_do_you_want_to_Logout">Are you sure do you want to Logout</string>
+    <string name="select_ntfp_data">Select Ntfp Data</string>
+    <string name="repassword">"Confirm new password     "</string>
+    <string name="kerala_forests_and_wildlife_department">Kerala Forests and\nWildlife Department</string>
+
+</resources>

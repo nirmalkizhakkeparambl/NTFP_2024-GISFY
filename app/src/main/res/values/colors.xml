@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="green">#38c172</color>
+    <color name="white">#ffff</color>
+    <color name="black">#000000</color>
+    <color name="silver">#605D5D</color>
+    <color name="textColorGrey">#414141</color>
+    <color name="grey">#7D7D7D</color>
+    <color name="light_grey">#f0f0f0</color>
+    <color name="green_payment">#37DB0F</color>
+    <color name="red_payment">#FF0000</color>
+    <color name="yellow">#CDDC39</color>
+    <color name="lightgrey">#fafafa</color>
+
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "433749194258",
+    "project_id": "ntfp-8",
+    "storage_bucket": "ntfp-8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433749194258:android:227902128989d445ba8acb",
+        "android_client_info": {
+          "package_name": "com.gisfy.ntfp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433749194258-blp4b5b56tan26i1v1kir7l058s1lpsp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrXGm4t8K4rv2xMqSMgF_xyz-gbkFJNQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433749194258-blp4b5b56tan26i1v1kir7l058s1lpsp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
