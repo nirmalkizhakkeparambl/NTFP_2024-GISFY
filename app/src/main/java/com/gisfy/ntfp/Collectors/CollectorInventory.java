@@ -4,7 +4,10 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -56,8 +59,10 @@ import com.gisfy.ntfp.VSS.Payment.Model_payment;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -74,11 +79,11 @@ import static com.gisfy.ntfp.SqliteHelper.DBHelper.VSS;
 
 public class CollectorInventory extends AppCompatActivity {
 
-    private TextInputEditText vss,division,range,quantity;
+    private TextInputEditText vss,division,range,quantity,amountPaid;
     private TextView date,headd,indication;
-    private Spinner measurement;
+    private Spinner measurement,location;
     private AutoCompleteTextView ntfptype,member,products,collector,vssSelect;
-    private Button proceed;
+    private Button proceed,AmoundCalc;
     private StaticChecks checks;
     private NTFP ntfpModel=null;
     boolean flag = true;
@@ -92,6 +97,11 @@ public class CollectorInventory extends AppCompatActivity {
     private NtfpDao dao;
     private SharedPref pref;
     boolean spinnerflag = false;
+    private int locationId =-1;
+
+    private boolean flagLocation = false;
+    private boolean flagNoLocation = false;
+    private List<String> locationNames = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +133,7 @@ public class CollectorInventory extends AppCompatActivity {
             memberModel = relation.getMember();
             collector.setText(relation.getCollector().getCollectorName(),false);
             quantity.setText(String.valueOf(relation.getInventory().getQuantity()));
+            amountPaid.setText(String.valueOf(relation.getInventory().getPrice()));
             measurementSpinner(measurement, relation.getInventory().getMeasurements());
 
         }else{
@@ -130,6 +141,80 @@ public class CollectorInventory extends AppCompatActivity {
             inventoryId = "TRANS-"+new SharedPref(CollectorInventory.this).getCollector().getCollectorName().substring(0,3).toUpperCase()+"-" + d.getDay() + d.getMonth() + d.getMinutes() + d.getSeconds();
             inventoryId = inventoryId.replace(".","").replace(" ","");
         }
+
+        AmoundCalc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                if (itemTypeModel!=null)
+                {
+                    double basePrice;
+
+                        basePrice = itemTypeModel.getGrade1Price();
+
+                    double quntityM= 0.0;
+                    if(!quantity.getText().toString().isEmpty()) {
+                        quntityM = Double.valueOf(quantity.getText().toString());
+                    }else {
+                        Toast.makeText(CollectorInventory.this, "Add quantity first", Toast.LENGTH_SHORT).show();
+                    }
+//                    if(loseQ.getText().toString().isEmpty()){
+//                         loseAmound = 00;
+//                    }else {
+//
+//                        loseAmound = Double.valueOf(loseQ.getText().toString());
+//                    }
+
+                    String amundBy=(String) measurement.getSelectedItem();
+
+//                    if((amundBy.equals("Kilogram")||amundBy.equals("Gram"))){
+//                        Toast.makeText(CollectorInventory.this, "Select required Unit first", Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                    if( (amundBy.equals("Litre")||amundBy.equals("Millilitre"))){
+//                        Toast.makeText(CollectorInventory.this, "Select required Unit first", Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                    else
+                        if(( (amundBy.equals("Kilogram")||amundBy.equals("Gram")))||((flag != true) && (amundBy.equals("Litre")||amundBy.equals("Millilitre")))){
+
+                        if (quntityM > 0)
+                        {
+                            quntityM = (quntityM) ;
+
+
+                            Log.i("getMEss",amundBy.toString()+"");
+                            if(amundBy.equals("Kilogram")){
+                                float fi=(Float.parseFloat(String.valueOf(basePrice * quntityM)));
+                                amountPaid.setText (String.valueOf(fi));
+                            }else if (amundBy.equals("Gram")){
+                                String amound = String.valueOf(quntityM * basePrice);
+                                float fi=(Float.parseFloat(amound)/1000);
+                                amountPaid.setText(String.valueOf(fi));
+                            }else if(amundBy.equals("Litre"))
+                            {
+                                amountPaid.setText(String.valueOf(quntityM * basePrice));
+                            }
+                            else if(amundBy.equals("Millilitre")){
+                                String amound = String.valueOf(quntityM * basePrice);
+                                float fi=(Float.parseFloat(amound)/1000);
+                                amountPaid.setText(String.valueOf(fi));
+                            }
+                        }else {
+
+                            amountPaid.setText("");
+                        }
+                    }
+
+
+                }
+                else{
+                    Toast.makeText(CollectorInventory.this, "Select type first", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
         proceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -162,7 +247,10 @@ public class CollectorInventory extends AppCompatActivity {
                                     Double.parseDouble(quantity.getText().toString()),
                                     0.0,
                                     0.0,
-                                    date.getText().toString());
+                                    date.getText().toString(),
+                                    location.getSelectedItem().toString(),
+                                    locationId
+                                    );
                             dao.insertInventory(entity);
                             startActivity(new Intent(CollectorInventory.this, InventoryList.class));
                         } catch (Exception e) {
@@ -177,18 +265,20 @@ public class CollectorInventory extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("WrongViewCast")
     private void intiViews() {
-        findViewById(R.id.calC).setVisibility(View.GONE);
-        findViewById(R.id.amountLayout).setVisibility(View.GONE);
+//        findViewById(R.id.calC).setVisibility(View.GONE);
+//        findViewById(R.id.amountLayout).setVisibility(View.GONE);
         findViewById(R.id.gradeTitle).setVisibility(View.GONE);
         findViewById(R.id.ntfpgrade).setVisibility(View.GONE);
-        findViewById(R.id.edit_lose).setVisibility(View.GONE);
+//        findViewById(R.id.edit_lose).setVisibility(View.GONE);
         collector = findViewById(R.id.collector_spinner);
         checks=new StaticChecks(this);
         pref=new SharedPref(this);
         member=findViewById(R.id.spinner_member);
         ntfptype=findViewById(R.id.ntfptype);
         quantity=findViewById(R.id.edit_quantity);
+        amountPaid= findViewById(R.id.amountPaid);
         date=findViewById(R.id.date);
         products=findViewById(R.id.spinner_ntfps);
         proceed=findViewById(R.id.add_collector_proceed);
@@ -208,6 +298,9 @@ public class CollectorInventory extends AppCompatActivity {
         quantity.setFilters(new InputFilter[]{new CollectorInventory.DecimalDigitsInputFilter(4, 2)});
         vssSelect.setVisibility(View.GONE);
         headd.setVisibility(View.GONE);
+        location = findViewById(R.id.location);
+        AmoundCalc=findViewById(R.id.calC);
+        new locationFeach().execute();
 
         findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -363,4 +456,174 @@ public class CollectorInventory extends AppCompatActivity {
             }
 //        }
    }
-}
+    JSONArray jsonArray;
+private class locationFeach extends AsyncTask<Void, Void, String> {
+    protected void onPreExecute() {
+        super.onPreExecute();
+        findViewById(R.id.spin_kit).setVisibility(View.VISIBLE);
+
+    }
+    @Override
+    protected String doInBackground(Void... params) {
+        CollectorUser user = new SharedPref(CollectorInventory.this).getCollector();
+        try {
+            OkHttpClient client = new OkHttpClient().newBuilder()
+                    .build();
+            // Replace with your API URL
+            String apiUrl = "http://vanasree.com/NTFPAPI/API/LocationList";
+
+            JSONObject jsonBody = new JSONObject();
+            jsonBody.put("RangeId", user.getRangeId());
+
+            // Convert the JSON object to a string
+            String requestBody = jsonBody.toString();
+            Log.d("REQQ",requestBody);
+            RequestBody requestJsonBody = RequestBody.create(MediaType.parse("application/json"), requestBody);
+            // Replace with your request body, if needed
+
+            Request request = new Request.Builder()
+                    .url("http://vanasree.com/NTFPAPI/API/LocationList")
+                    .method("POST", requestJsonBody)
+                    .addHeader("Content-Type", "application/json")
+                    .build();
+
+
+//            Response response = client.newCall(request).execute();
+//            Log.d("ResponceLoc0",response.body().string());
+//            String responseString = "";
+
+//                okhttp3.Response response = client.newCall(request).execute();
+            String responseData = "[{\"id\": 1, \"location_name\": \"Location 1\"}, {\"id\": 2, \"location_name\": \"Location 2\"}, {\"id\": 3, \"location_name\": \"Location 3\"}]";
+
+//            if (response.isSuccessful()) {
+//                ResponseBody responseBodyy = response.body();
+//                if(responseBodyy != null){
+                    try {
+
+                        jsonArray = new JSONArray(responseData);
+
+
+                        // Check if the response contains location data
+                        if (jsonArray.length() > 0 && jsonArray.getJSONObject(0).has("location_name")) {
+
+
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject item = jsonArray.getJSONObject(i);
+                                String locationName = item.getString("location_name");
+                                locationNames.add(locationName);
+                            }
+                            flagLocation= true;
+                            flagNoLocation = false;
+
+
+                        } else {
+                            flagNoLocation = true;
+                            flagLocation = false;
+                            // Handle the case where "Status" is "Not Found!"
+
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+//                }
+
+
+//            } else {
+//
+//                // Handle non-successful response
+//                return "Error: " + response.code();
+//            }
+//            if (response.isSuccessful()) {
+//                ResponseBody responseBodyy = response.body();
+//                if(responseBodyy != null){
+//                    try {
+//
+//                        jsonArray = new JSONArray(responseData);
+//
+//
+//                        // Check if the response contains location data
+//                        if (jsonArray.length() > 0 && jsonArray.getJSONObject(0).has("location_name")) {
+//
+//
+//                            for (int i = 0; i < jsonArray.length(); i++) {
+//                                JSONObject item = jsonArray.getJSONObject(i);
+//                                String locationName = item.getString("location_name");
+//                                locationNames.add(locationName);
+//                            }
+//                            flagLocation= true;
+//                            flagNoLocation = false;
+//
+//
+//                        } else {
+//                            flagNoLocation = true;
+//                            flagLocation = false;
+//                            // Handle the case where "Status" is "Not Found!"
+//
+//                        }
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//
+//
+//            } else {
+//
+//                // Handle non-successful response
+//                return "Error: " + response.code();
+//            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return "Error: " + e.getMessage();
+//        }
+//        catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+        return null;
+    }
+
+    @Override
+    protected void onPostExecute(String result) {
+        if(flagLocation == true){
+            // Populate the Spinner with location names
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(CollectorInventory.this, android.R.layout.simple_spinner_item, locationNames);
+            adapter.setDropDownViewResource(R.layout.spinner_layout);
+            location.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+            // Set an OnItemSelectedListener to handle item selection and get the corresponding id
+            location.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                    // Get the corresponding id from the JSON data
+                    try {
+                        JSONObject selectedItem = jsonArray.getJSONObject(position);
+                        locationId = selectedItem.getInt("id");
+
+                        // Use locationId as needed
+                        // ...
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parentView) {
+                    // Handle nothing selected
+                    locationId = 0;
+                }
+            });
+            findViewById(R.id.spin_kit).setVisibility(View.GONE);
+        }
+        else if(flagNoLocation == true){
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(CollectorInventory.this, android.R.layout.simple_spinner_item, new String[]{"No location available"});
+            adapter.setDropDownViewResource(R.layout.spinner_layout);
+            location.setAdapter(adapter);
+            locationId = 0;
+            adapter.notifyDataSetChanged();
+            findViewById(R.id.spin_kit).setVisibility(View.GONE);
+        }
+    }
+}}

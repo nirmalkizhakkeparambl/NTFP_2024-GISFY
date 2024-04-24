@@ -36,6 +36,8 @@ public class CollectorUser {
     private String fcmid;
     @SerializedName("VSSFCMID")
     private String vssfcmid;
+
+    @SerializedName("UserName")
     private String userName;
     public CollectorUser() {
     }
@@ -156,5 +158,6 @@ public class CollectorUser {
     public String getVssfcmid() {
         return vssfcmid;
     }
+
 }
 

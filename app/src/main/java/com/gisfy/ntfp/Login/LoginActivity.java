@@ -116,10 +116,19 @@ public class LoginActivity extends AppCompatActivity {
     private void initViews() {
         signin=findViewById(R.id.signin);
         username=findViewById(R.id.email);
-        password=findViewById(R.id.password);
-        checks=new StaticChecks(this);
         pref=new SharedPref(this);
         type=pref.getString("type");
+        Log.d("TTTYPE",type);
+
+        if(type.trim() == "VSS"){
+            username.setHint(getString(R.string.userid));
+        }else if(type.trim() == "RFO"){
+            username.setHint(getString(R.string.userid));
+        }else  username.setHint(getString(R.string.phoneno));
+        password=findViewById(R.id.password);
+        checks=new StaticChecks(this);
+
+
         TextView chooseText = findViewById(R.id.choosetext);
         chooseText.setText(getString(R.string.login));
     }
@@ -132,6 +141,8 @@ public class LoginActivity extends AppCompatActivity {
         Log.i("DEBUGGING REQUESTBODY",json.toString());
         switch (type) {
             case Constants.VSS: {
+
+
                 Call<List<VSSUser>> call = RetrofitClient.getInstance().getMyApi().getVSSUser(json);
                 Log.i("DEBUGGING CALL",call.toString());
                 call.enqueue(new Callback<List<VSSUser>>() {
@@ -143,6 +154,7 @@ public class LoginActivity extends AppCompatActivity {
                             List<VSSUser> heroList = response.body();
                             pref.saveVSS(heroList.get(0));
                             pref.addString("Role","VSS");
+                            pref.addInt("RangeId",heroList.get(0).getRangeId());
                             pref.addString("username",heroList.get(0).getvSSName());
                             pref.addBool("login", true);
                             pref.addString("ProfileImage",getString(R.string.profileURL)+heroList.get(0).getImage());
@@ -171,6 +183,7 @@ public class LoginActivity extends AppCompatActivity {
                 break;
             }
             case Constants.RFO: {
+
                 Call<List<RFOUser>> call = RetrofitClient.getInstance().getMyApi().getRFOUser(json);
                 call.enqueue(new Callback<List<RFOUser>>() {
                     @Override

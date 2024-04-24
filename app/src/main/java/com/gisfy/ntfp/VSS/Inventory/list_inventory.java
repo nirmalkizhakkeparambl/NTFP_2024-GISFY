@@ -72,6 +72,8 @@ public class list_inventory  extends AppCompatActivity {
     private CollectorsModel collectorModel = null;
     private Inventory modelll;
     private MemberModel modell;
+    private  boolean uploadStock = false;
+    private  boolean uploadPay = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,6 +109,7 @@ public class list_inventory  extends AppCompatActivity {
 
                         Intent i =new Intent(list_inventory.this,Home.class);
                         startActivity(i);
+
                     }else{
                         SnackBarUtils.ErrorSnack(list_inventory.this,"No Items Selected");
                     }
@@ -217,7 +220,7 @@ public class list_inventory  extends AppCompatActivity {
         }
         @Override
         protected String doInBackground(String... strings) {
-            new uploadTaskPayment().execute();
+//            new uploadTaskPayment().execute();
             OkHttpClient client = new OkHttpClient().newBuilder().build();
             MediaType mediaType = MediaType.parse("application/json");
             Log.i("jsonData188",jsonwriter()+"");
@@ -228,10 +231,11 @@ public class list_inventory  extends AppCompatActivity {
                     .addHeader("Content-Type", "application/json")
                     .build();
 
-
             try {
                 Response response = client.newCall(request).execute();
-                if (setStatus(response.body().string().trim()))
+                String responseData = response.body().string();
+                Log.i("responseStocks",responseData+"");
+                if (setStatus(responseData))
                     return response.message();
                 else
                     return getResources().getString(R.string.somedetailsnotsynced);
@@ -245,12 +249,10 @@ public class list_inventory  extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
+
             btnFlag=false;
             if (s.equals("OK"))
-                Toast.makeText(getApplicationContext()
-                                ,"",
-                                Toast.LENGTH_SHORT)
-                        .show();
+                SnackBarUtils.ErrorSnack(list_inventory.this,getResources().getString(R.string.synced));
 
             else if(s.equals(getResources().getString(R.string.somedetailsnotsynced)))
                 SnackBarUtils.WarningSnack(list_inventory.this,s);
@@ -262,6 +264,7 @@ public class list_inventory  extends AppCompatActivity {
             sync.setVisibility(View.VISIBLE);
             if (shallowCopy.size()>0)
                 Collections.sort(shallowCopy,new list_inventory.SortByDate());
+            uploadStock = true;
             adapter.notifyDataSetChanged();
             super.onPostExecute(s);
         }
@@ -287,8 +290,6 @@ public class list_inventory  extends AppCompatActivity {
                     .method("POST", bodyp)
                     .addHeader("Content-Type", "application/json")
                     .build();
-
-
             try {
                 Response response = client.newCall(request).execute();
                 if (setStatusp(response.body().string().trim()))
@@ -306,27 +307,116 @@ public class list_inventory  extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             btnFlag=false;
-            if (s.equals("OK"))
-                Toast.makeText(getApplicationContext()
-                                ,"",
-                                Toast.LENGTH_SHORT)
-                        .show();
-
+            if (s.equals("OK")){}
             else if(s.equals(getResources().getString(R.string.somedetailsnotsynced)))
                 SnackBarUtils.WarningSnack(list_inventory.this,s);
             else
                 SnackBarUtils.ErrorSnack(list_inventory.this,getResources().getString(R.string.servernotresponding));
             findViewById(R.id.spin_kit).setVisibility(View.GONE);
             isinActionMode=false;
-
-
-
+uploadPay = true;
             super.onPostExecute(s);
         }
 
     }
 
-
+//    private String jsonwriter(){
+//        List<String> newobjects=new ArrayList<>();
+//        VSSUser user=new SharedPref(this).getVSS();
+//
+//
+//        for (InventoryRelation model:adapter.getSelectedItems()){
+//
+//            if(model.getInventory().getVssname().equals(user.getvSSName())){
+//                if (model.isSelected()&&!model.getInventory().isSynced()){
+//                    int CIID;
+//                    if(model.getCollector()!=null) {
+//                        CIID = model.getCollector().getCid();
+//                        Log.i("CIID1", CIID + "");
+//                    }else{ CIID = 0;}
+//
+//                    int memberId;
+//                    if (model.getMember()!=null) {
+//
+//                        memberId = model.getMember().getMemberId();}
+//
+//                    else {
+//
+//
+//                        Log.i("111111", "");
+//                        memberId= -1;
+//
+//                    }
+//
+//
+//                    newobjects.add("{\n" +
+//                            "    \"Random\":\""+model.getInventory().getInventoryId()+"\",\n" +
+//                            "    \"DivisionId\":\""+user.getDivisionId()+"\",\n" +
+//                            "    \"RangeId\":\""+user.getRangeId()+"\",\n" +
+//                            "    \"VSSId\":\""+user.getVid()+"\",\n" +
+//                            "    \"FromVSSId\":\""+model.getInventory().getVssnamesle()+"\",\n" +
+//                            "    \"NTFPName\":\""+model.getNtfp().getNTFPscientificname()+"\",\n" +
+//                            "    \"NTFPId\":\""+model.getNtfp().getNid()+"\",\n" +
+//                            "    \"MemberId\":\""+memberId+"\",\n" +
+//                            "    \"CollectorId\":\""+CIID+"\",\n" +
+//                            "    \"NTFPTypeId\":\""+model.getItemType().getItemId()+"\",\n" +
+//                            "    \"Unit\":\""+model.getInventory().getMeasurements()+"\",\n" +
+//                            "    \"Quantity\":\""+model.getInventory().getQuantity()+"\",\n" +
+//                            "    \"NTFPType\":\""+model.getItemType().getMycase()+"\",\n" +
+//                            "    \"Collector\":\""+model.getInventory().getColectname()+"\",\n" +
+//                            "    \"Amount\":\""+model.getInventory().getPrice()+"\",\n" +
+//                            "    \"DateandTime\":\""+model.getInventory().getDate()+"\",\n" +
+//                            "    \"Loss\":\""+model.getInventory().getLoseAmound()+"\"\n" +
+//                            "    \"location_id\":\""+model.getInventory().getLocationId()+"\"\n" +
+//                            "}");
+//                }
+//            }else {
+//                if (model.isSelected()&&!model.getInventory().isSynced()){
+//                    int memberId;
+//                    if (model.getMember()!=null) memberId = model.getMember().getMemberId();
+//                    else memberId = -1;
+//                    Log.i("2222222","");
+//
+//                    newobjects.add("{\n" +
+//                            "    \"Random\":\""+model.getInventory().getInventoryId()+"\",\n" +
+//                            "    \"DivisionId\":\""+user.getDivisionId()+"\",\n" +
+//                            "    \"RangeId\":\""+user.getRangeId()+"\",\n" +
+//                            "    \"VSSId\":\""+user.getVid()+"\",\n" +
+//                            "    \"FromVSSId\":\""+model.getInventory().getVssnamesle()+"\",\n" +
+//                            "    \"NTFPName\":\""+model.getNtfp().getNTFPscientificname()+"\",\n" +
+//                            "    \"NTFPId\":\""+model.getNtfp().getNid()+"\",\n" +
+//                            "    \"MemberId\":\""+memberId+"\",\n" +
+//                            "    \"CollectorId\":\""+model.getInventory().getCollectorId()+"\",\n" +
+//                            "    \"NTFPTypeId\":\""+model.getItemType().getItemId()+"\",\n" +
+//                            "    \"Unit\":\""+model.getInventory().getMeasurements()+"\",\n" +
+//                            "    \"Quantity\":\""+model.getInventory().getQuantity()+"\",\n" +
+//                            "    \"NTFPType\":\""+model.getItemType().getMycase()+"\",\n" +
+//                            "    \"Collector\":\""+model.getInventory().getColectname()+"\",\n" +
+//                            "    \"Amount\":\""+model.getInventory().getPrice()+"\",\n" +
+//                            "    \"DateandTime\":\""+model.getInventory().getDate()+"\",\n" +
+//                            "    \"Loss\":\""+model.getInventory().getLoseAmound()+"\"\n" +
+//                            "    \"location_id\":\""+model.getInventory().getLocationId()+"\"\n" +
+//                            "}");
+//
+//                }
+//
+//
+//            }
+//
+//        }
+//        StringBuilder sb=new StringBuilder("[");
+//        if (newobjects.size()>0){
+//            for (int i=0;i<newobjects.size();i++){
+//                if (i==newobjects.size()-1){
+//                    sb.append(newobjects.get(i));
+//                }else {
+//                    sb.append(newobjects.get(i)).append(",");
+//                }
+//            }
+//            sb.append("]");
+//        }
+//        return sb.toString();
+//    }
 
     private String jsonwriter(){
         List<String> newobjects=new ArrayList<>();
@@ -374,7 +464,8 @@ public class list_inventory  extends AppCompatActivity {
                             "    \"Collector\":\""+model.getInventory().getColectname()+"\",\n" +
                             "    \"Amount\":\""+model.getInventory().getPrice()+"\",\n" +
                             "    \"DateandTime\":\""+model.getInventory().getDate()+"\",\n" +
-                            "    \"Loss\":\""+model.getInventory().getLoseAmound()+"\"\n" +
+                            "    \"Loss\":\""+model.getInventory().getLoseAmound()+"\",\n" +
+                            "    \"location_id\":\""+model.getInventory().getLocationId()+"\"\n" +
                             "}");
                 }
             }else {
@@ -401,7 +492,8 @@ public class list_inventory  extends AppCompatActivity {
                             "    \"Collector\":\""+model.getInventory().getColectname()+"\",\n" +
                             "    \"Amount\":\""+model.getInventory().getPrice()+"\",\n" +
                             "    \"DateandTime\":\""+model.getInventory().getDate()+"\",\n" +
-                            "    \"Loss\":\""+model.getInventory().getLoseAmound()+"\"\n" +
+                            "    \"Loss\":\""+model.getInventory().getLoseAmound()+"\",\n" +
+                            "     \"location_id\":\""+model.getInventory().getLocationId()+"\"\n" +
                             "}");
 
                 }

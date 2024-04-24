@@ -63,8 +63,11 @@ public class Ticket_UI extends AppCompatActivity {
             statusImage.setImageResource(R.drawable.expired);
             spouse.setText("Expired");
         }
-        userName.setText(pref.getString("userId"));
+        userName.setText(user.getUserName());
         name.setText(user.getCollectorName());
+//        userName.setText(pref.getString("userId"));
+//        name.setText(user.getCollectorName());
+//        name.setText(user.getUserName());
         vssname.setText(user.getvSSName());
 
         division.setText(user.getDivision());

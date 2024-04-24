@@ -207,7 +207,7 @@ private JSONArray getjsonarray(){
              object.put("NTFPType",model.getItemType().getMycase());
              object.put("NTFPTypeId",model.getItemType().getItemId()); }
             object.put("MemberId",model.getMember()!=null?model.getMember().getMemberId():-1);
-
+            object.put("location_id",model.getInventory().getLocationId());
             jsonArray.put(object);
             Log.i("inventorydata",jsonArray.toString());
         }
