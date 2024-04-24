@@ -213,6 +213,7 @@
     <string name="recheckpass">നിങ്ങളുടെ ഉപയോക്തൃനാമം / പാസ്‌വേഡ് വീണ്ടും പരിശോധിക്കുക</string>
     <string name="paymentsList">പണമിടപാടിൻറെ പട്ടിക</string>
     <string name="selectntfptype">എൻ.ടി.എഫ്.പി  തരം തിരഞ്ഞെടുക്കുക</string>
+    <string name="selectntfploc">Select NTFP Location*</string>
     <string name="filter">തിരഞ്ഞെടുക്കുക</string>
     <string name="back">തിരികെ</string>
     <string name="To">To: </string>
