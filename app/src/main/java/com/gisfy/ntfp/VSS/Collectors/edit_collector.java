@@ -396,7 +396,7 @@ public class edit_collector extends AppCompatActivity {
                 MediaType mediaType = MediaType.parse("application/json");
                 RequestBody body = RequestBody.create(mediaType, json.toString());
                 Request request = new Request.Builder()
-                        .url("http://vanasree.com/NTFPAPI/API/NTFPList")
+                        .url("https://vanasree.com/NTFPAPI/API/NTFPList")
                         .method("POST", body)
                         .addHeader("Content-Type", "application/json")
                         .build();

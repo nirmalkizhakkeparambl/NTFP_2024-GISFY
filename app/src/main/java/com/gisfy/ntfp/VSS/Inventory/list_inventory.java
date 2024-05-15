@@ -226,7 +226,7 @@ public class list_inventory  extends AppCompatActivity {
             Log.i("jsonData188",jsonwriter()+"");
             RequestBody body = RequestBody.create(mediaType,jsonwriter());
             Request request = new Request.Builder()
-                    .url("http://vanasree.com/NTFPAPI/API/Stocks")
+                    .url("https://vanasree.com/NTFPAPI/API/Stocks")
                     .method("POST", body)
                     .addHeader("Content-Type", "application/json")
                     .build();
@@ -286,7 +286,7 @@ public class list_inventory  extends AppCompatActivity {
             Log.i("jsonData188PY",jsonwriterp()+"");
             RequestBody bodyp = RequestBody.create(mediaTypep,jsonwriterp().toString());
             Request request = new Request.Builder()
-                    .url("http://vanasree.com/NTFPAPI/API/Payment")
+                    .url("https://vanasree.com/NTFPAPI/API/Payment")
                     .method("POST", bodyp)
                     .addHeader("Content-Type", "application/json")
                     .build();

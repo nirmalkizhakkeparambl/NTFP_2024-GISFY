@@ -315,7 +315,7 @@ public class InventoryAdapter  extends RecyclerView.Adapter<InventoryAdapter.Vie
             MediaType mediaType = MediaType.parse("application/json");
             RequestBody body = RequestBody.create(mediaType, getjsonarray(model).toString());
             Request request = new Request.Builder()
-                    .url("http://vanasree.com/NTFPAPI/API/CollectorInventoty")
+                    .url("https://vanasree.com/NTFPAPI/API/CollectorInventoty")
                     .method("POST", body)
                     .addHeader("Content-Type", "application/json")
                     .build();

@@ -833,7 +833,7 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
 
     private void postDataUsingVolley(JSONArray requestBody) {
         //  Log.i("getREQUESTBODY ",requestBody.toString());
-        String URL = "http://vanasree.com/NTFPAPI/API/CollectorList";
+        String URL = "https://vanasree.com/NTFPAPI/API/CollectorList";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Getting Data...");
@@ -954,9 +954,10 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
         requestQueue.add(loginRequest);
 
     }
+
     private void postDataUsingVolleyone(JSONArray requestBody) {
 
-        String URL = "http://vanasree.com/NTFPAPI/API/MemberList";
+        String URL = "https://vanasree.com/NTFPAPI/API/MemberList";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Getting Data...");
@@ -1043,7 +1044,6 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
         requestQueue.add(loginRequest);
 
     }
-
 
     private void intiViews() {
         pref = new SharedPref(this);
@@ -1343,8 +1343,6 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
 //    });
     }
 
-
-
     class DecimalDigitsInputFilter implements InputFilter {
         private Pattern mPattern;
         DecimalDigitsInputFilter(int digitsBeforeZero, int digitsAfterZero) {
@@ -1398,7 +1396,7 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
             MediaType mediaType = MediaType.parse("application/json");
             RequestBody body = RequestBody.create(mediaType, strings[0]);
             Request request = new Request.Builder()
-                    .url("http://13.127.166.242/NTFPAPI/API/VSSUppdateStatusForCollectorStock")
+                    .url("https://13.127.166.242/NTFPAPI/API/VSSUppdateStatusForCollectorStock")
                     .method("POST", body)
                     .addHeader("Content-Type", "application/json")
                     .build();
@@ -1431,8 +1429,6 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
 
         }
     }
-
-
 
     private boolean setStatus(String json) throws JSONException {
         Log.i("ksdks",json);
@@ -1489,7 +1485,6 @@ JSONArray jsonArray;
                 OkHttpClient client = new OkHttpClient().newBuilder()
                         .build();
                 // Replace with your API URL
-                String apiUrl = "http://vanasree.com/NTFPAPI/API/LocationList";
 
                 JSONObject jsonBody = new JSONObject();
                 jsonBody.put("RangeId",  user.getRangeId());
@@ -1501,23 +1496,16 @@ JSONArray jsonArray;
                 // Replace with your request body, if needed
 
                 Request request = new Request.Builder()
-                        .url("http://vanasree.com/NTFPAPI/API/LocationList")
+                        .url("https://vanasree.com/NTFPAPI/API/LocationList")
                         .method("POST", requestJsonBody)
                         .addHeader("Content-Type", "application/json")
                         .build();
 
-
-//            Response response = client.newCall(request).execute();
-//            Log.d("ResponceLoc0",response.body().string());
-//            String responseString = "";
-
-//                okhttp3.Response response = client.newCall(request).execute();
-                String responseData = "[{\"id\": 1, \"location_name\": \"Location 1\"}, {\"id\": 2, \"location_name\": \"Location 2\"}, {\"id\": 3, \"location_name\": \"Location 3\"}]";
-
-
-//                if (response.isSuccessful()) {
-//                    ResponseBody responseBodyy = response.body();
-//                    if(responseBodyy != null){
+                okhttp3.Response response = client.newCall(request).execute();
+                String responseData = response.body().string();
+                if (response.isSuccessful()) {
+                    ResponseBody responseBodyy = response.body();
+                    if(responseBodyy != null){
                         try {
 
                             jsonArray = new JSONArray(responseData);
@@ -1525,7 +1513,6 @@ JSONArray jsonArray;
 
                             // Check if the response contains location data
                             if (jsonArray.length() > 0 && jsonArray.getJSONObject(0).has("location_name")) {
-
 
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject item = jsonArray.getJSONObject(i);
@@ -1545,21 +1532,17 @@ JSONArray jsonArray;
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-//                    }
+                    }
 
 
-//                } else {
-//
-//                    // Handle non-successful response
-//                    return "Error: " + response.code();
-//
-//                }
-//                locationNames.add("Lobby");
-//                locationNames.add("Room1");
-//                locationNames.add("Room2");
-//                flagNoLocation = false;
-//                flagLocation = true;
+                } else {
+
+                    // Handle non-successful response
+                    return "Error: " + response.code();
+                }
             } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;

@@ -139,7 +139,7 @@ public class InventoryList extends AppCompatActivity {
             MediaType mediaType = MediaType.parse("application/json");
             RequestBody body = RequestBody.create(mediaType, getjsonarray().toString());
             Request request = new Request.Builder()
-                    .url("http://vanasree.com/NTFPAPI/API/CollectorInventoty")
+                    .url("https://vanasree.com/NTFPAPI/API/CollectorInventoty")
                     .method("POST", body)
                     .addHeader("Content-Type", "application/json")
                     .build();
@@ -221,7 +221,7 @@ private JSONArray getjsonarray(){
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            findViewById(R.id.spin_kit).setVisibility(View.VISIBLE);
+           findViewById(R.id.spin_kit).setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -238,8 +238,9 @@ private JSONArray getjsonarray(){
                     Collections.reverse(shallowCopy);
                     Log.i("ListSize221",shallowCopy.size()+"");
 
-                }
 
+                }
+                findViewById(R.id.spin_kit).setVisibility(View.GONE);
                 Log.i("ListSize220",list.size()+"");
 
             } catch (Exception e) {
@@ -257,6 +258,7 @@ private JSONArray getjsonarray(){
             if (shallowCopy.size()>0)
                 Collections.sort(shallowCopy,new  InventoryList.SortByDate());
             recyclerView.setAdapter(adapter);
+            findViewById(R.id.spin_kit).setVisibility(View.GONE);
             if (s!=null)
                 SnackBarUtils.ErrorSnack( InventoryList.this,s);
 

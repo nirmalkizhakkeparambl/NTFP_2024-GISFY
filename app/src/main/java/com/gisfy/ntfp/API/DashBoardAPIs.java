@@ -10,7 +10,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface DashBoardAPIs {
-    String DashboardBaseUrl = "http://vanasree.com/NTFPAPI/API/Dashboard/";
+    String DashboardBaseUrl = "https://vanasree.com/NTFPAPI/API/Dashboard/";
     @POST("TransitpassData")
     @Headers({ "Content-Type: application/json;charset=UTF-8"})
     Call<List<DashboardTransitModel>> TransitpassData(@Body HashMap<String, String> hashMap);

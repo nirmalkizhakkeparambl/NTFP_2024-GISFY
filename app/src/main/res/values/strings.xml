@@ -437,8 +437,8 @@
     <string name="transitfor">Transit To</string>
     <string name="enterscstcategory">"Enter ScSt Federation "</string>
     <string name="pleaseselecttransitfor">Please Select Transit Data</string>
-    <string name="profileURL">http://vanasree.com/NTFPProfilePictures/</string>
-    <string name="baseURL">http://vanasree.com/</string>
+    <string name="profileURL">https://vanasree.com/NTFPProfilePictures/</string>
+    <string name="baseURL">https://vanasree.com/</string>
     <string name="type_to_search">Type to search</string>
     <string name="selectntfpgrade">Select NTFP Grade*</string>
     <string name="action_settings">Settings</string>

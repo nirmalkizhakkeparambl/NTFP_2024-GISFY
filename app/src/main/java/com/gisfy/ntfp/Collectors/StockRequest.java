@@ -197,7 +197,7 @@ public class StockRequest extends AppCompatActivity {
             MediaType mediaType = MediaType.parse("application/json");
             RequestBody body = RequestBody.create(mediaType, getJsonArray().toString());
             Request request = new Request.Builder()
-                    .url("http://vanasree.com//NTFPAPI/API/CollectorStockRequestToVSS")
+                    .url("https://vanasree.com//NTFPAPI/API/CollectorStockRequestToVSS")
                     .method("POST", body)
                     .addHeader("Content-Type", "application/json")
                     .build();

@@ -87,7 +87,6 @@ public class CollectorInventory extends AppCompatActivity {
     private StaticChecks checks;
     private NTFP ntfpModel=null;
     boolean flag = true;
-
     private NTFP.ItemType itemTypeModel =null;
     private MemberModel memberModel = null;
     private ArrayAdapter<NTFP.ItemType> ntfpTypeAdapter = null;
@@ -469,8 +468,6 @@ private class locationFeach extends AsyncTask<Void, Void, String> {
         try {
             OkHttpClient client = new OkHttpClient().newBuilder()
                     .build();
-            // Replace with your API URL
-            String apiUrl = "http://vanasree.com/NTFPAPI/API/LocationList";
 
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("RangeId", user.getRangeId());
@@ -482,30 +479,23 @@ private class locationFeach extends AsyncTask<Void, Void, String> {
             // Replace with your request body, if needed
 
             Request request = new Request.Builder()
-                    .url("http://vanasree.com/NTFPAPI/API/LocationList")
+                    .url("https://vanasree.com/NTFPAPI/API/LocationList")
                     .method("POST", requestJsonBody)
                     .addHeader("Content-Type", "application/json")
                     .build();
 
 
-//            Response response = client.newCall(request).execute();
-//            Log.d("ResponceLoc0",response.body().string());
-//            String responseString = "";
+            Response response = client.newCall(request).execute();
+            String responseData = response.body().string();
 
-//                okhttp3.Response response = client.newCall(request).execute();
-            String responseData = "[{\"id\": 1, \"location_name\": \"Location 1\"}, {\"id\": 2, \"location_name\": \"Location 2\"}, {\"id\": 3, \"location_name\": \"Location 3\"}]";
-
-//            if (response.isSuccessful()) {
-//                ResponseBody responseBodyy = response.body();
-//                if(responseBodyy != null){
+            if (response.isSuccessful()) {
+                ResponseBody responseBodyy = response.body();
+                if(responseBodyy != null){
                     try {
-
                         jsonArray = new JSONArray(responseData);
-
 
                         // Check if the response contains location data
                         if (jsonArray.length() > 0 && jsonArray.getJSONObject(0).has("location_name")) {
-
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject item = jsonArray.getJSONObject(i);
@@ -515,72 +505,25 @@ private class locationFeach extends AsyncTask<Void, Void, String> {
                             flagLocation= true;
                             flagNoLocation = false;
 
-
                         } else {
                             flagNoLocation = true;
                             flagLocation = false;
                             // Handle the case where "Status" is "Not Found!"
-
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-//                }
+                }
+            } else {
 
-
-//            } else {
-//
-//                // Handle non-successful response
-//                return "Error: " + response.code();
-//            }
-//            if (response.isSuccessful()) {
-//                ResponseBody responseBodyy = response.body();
-//                if(responseBodyy != null){
-//                    try {
-//
-//                        jsonArray = new JSONArray(responseData);
-//
-//
-//                        // Check if the response contains location data
-//                        if (jsonArray.length() > 0 && jsonArray.getJSONObject(0).has("location_name")) {
-//
-//
-//                            for (int i = 0; i < jsonArray.length(); i++) {
-//                                JSONObject item = jsonArray.getJSONObject(i);
-//                                String locationName = item.getString("location_name");
-//                                locationNames.add(locationName);
-//                            }
-//                            flagLocation= true;
-//                            flagNoLocation = false;
-//
-//
-//                        } else {
-//                            flagNoLocation = true;
-//                            flagLocation = false;
-//                            // Handle the case where "Status" is "Not Found!"
-//
-//                        }
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//
-//
-//            } else {
-//
-//                // Handle non-successful response
-//                return "Error: " + response.code();
-//            }
+                // Handle non-successful response
+                return "Error: " + response.code();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return "Error: " + e.getMessage();
-//        }
-//        catch (JSONException e) {
-//            e.printStackTrace();
-//        }
         return null;
     }
 

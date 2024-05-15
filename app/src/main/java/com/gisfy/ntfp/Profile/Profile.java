@@ -239,10 +239,10 @@ public class Profile extends AppCompatActivity  {
         TextView welcome=findViewById(R.id.welcome);
         checks.setWishes(welcome);
         profileImage=findViewById(R.id.profile_image);
-        Glide.with(this).load(pref.getString("ProfileImage"))
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true)
-                .error(R.drawable.vanashreelogo).into(profileImage);
+//        Glide.with(this).load(pref.getString("ProfileImage"))
+//                .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                .skipMemoryCache(true)
+//                .error(R.drawable.vanashreelogo).into(profileImage);
         Log.i("image url",pref.getString("ProfileImage"));
     }
 
@@ -283,11 +283,11 @@ public class Profile extends AppCompatActivity  {
             if (s.equals("true")){
                 checks.showSnackBar(getResources().getString(R.string.sucess));
                 pref.addString("ProfileImage",getString(R.string.baseURL)+"NTFPProfilePictures/"+id+".jpg");
-                Glide.with(Profile.this).load(pref.getString("ProfileImage"))
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .skipMemoryCache(true)
-                        .error(R.drawable.vector_account_circle)
-                        .into(profileImage);
+//                Glide.with(Profile.this).load(pref.getString("ProfileImage"))
+//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                        .skipMemoryCache(true)
+//                        .error(R.drawable.vector_account_circle)
+//                        .into(profileImage);
             }else{
                 SnackBarUtils.ErrorSnack(Profile.this,s);
             }

@@ -90,7 +90,7 @@ public class adapter_shipment  extends RecyclerView.Adapter<adapter_shipment.Vie
                 permissionUtils = new PermissionUtils();
                 if (permissionUtils.checkPermission(activity, 1, view)) {
                     try {
-                        activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://vanasree.com/NTFPIMS/VSSTransitPass.aspx?ShipmentNumber="+data.getUid())));
+                        activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://vanasree.com/NTFPIMS/VSSTransitPass.aspx?ShipmentNumber="+data.getUid())));
                     } catch (Exception e) {
                         e.getStackTrace();
                     }
