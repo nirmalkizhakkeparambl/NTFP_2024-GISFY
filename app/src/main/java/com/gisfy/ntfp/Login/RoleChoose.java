@@ -2,6 +2,7 @@ package com.gisfy.ntfp.Login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 
@@ -36,6 +37,7 @@ public class RoleChoose extends AppCompatActivity {
             public void onClick(View view) {
                 if (type!=null){
                     pref.addString("type",type);
+                    Log.d("TYPE",type);
                     startActivity(new Intent(RoleChoose.this,LoginActivity.class));
                 }else{
                     SnackBarUtils.WarningSnack(RoleChoose.this, getResources().getString(R.string.selectrole));

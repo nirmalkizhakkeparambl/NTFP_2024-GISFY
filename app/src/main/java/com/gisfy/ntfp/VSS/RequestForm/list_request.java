@@ -242,7 +242,7 @@ public class list_request extends AppCompatActivity {
             Log.i("kishore232",getRequestBody().toString());
             RequestBody body = RequestBody.create(mediaType,getRequestBody().toString());
             Request request = new Request.Builder()
-                    .url("http://vanasree.com/NTFPAPI/API/Transit")
+                    .url("https://vanasree.com/NTFPAPI/API/Transit")
                     .method("POST", body)
                     .addHeader("Content-Type", "application/json")
                     .build();

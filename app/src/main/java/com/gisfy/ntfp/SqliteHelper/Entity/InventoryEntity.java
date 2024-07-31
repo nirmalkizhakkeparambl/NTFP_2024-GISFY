@@ -36,6 +36,9 @@ public class InventoryEntity {
     private String date;
     @SerializedName("Random")
     private String random;
+    private String locationName;
+    @SerializedName("location_id")
+    private int locationId;
     @SerializedName("isSynced")
     private boolean synced;
 
@@ -47,7 +50,7 @@ public class InventoryEntity {
         this.random = random;
     }
 
-    public InventoryEntity(@NonNull String inventoryId, int collectorId, int memberId, int ntfpId, int typeId ,String vssname,String vssnamesle,String colectname,String grade, String measurements, double quantity,double loseAmound, double price, String date) {
+    public InventoryEntity(@NonNull String inventoryId, int collectorId, int memberId, int ntfpId, int typeId ,String vssname,String vssnamesle,String colectname,String grade, String measurements, double quantity,double loseAmound, double price, String date, String locationName , int locationId) {
         this.inventoryId = inventoryId;
         this.collectorId = collectorId;
         this.memberId = memberId;
@@ -64,6 +67,9 @@ public class InventoryEntity {
         this.loseAmound = loseAmound;
         this.price = price;
         this.date = date;
+        this.locationName = locationName;
+        this.locationId = locationId;
+
     }
 
     public String getVssnamesle() {
@@ -184,5 +190,21 @@ public class InventoryEntity {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
     }
 }

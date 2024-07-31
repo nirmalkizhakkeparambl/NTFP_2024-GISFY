@@ -260,7 +260,7 @@ public class CollectorInventory extends AppCompatActivity {
             MediaType mediaType = MediaType.parse("application/json");
             RequestBody body = RequestBody.create(mediaType, strings[0]);
             Request request = new Request.Builder()
-                    .url("http://vanasree.com/NTFPAPI/API/VSSUppdateStatusForCollectorStock")
+                    .url("https://vanasree.com/NTFPAPI/API/VSSUppdateStatusForCollectorStock")
                     .method("POST", body)
                     .addHeader("Content-Type", "application/json")
                     .build();

@@ -67,7 +67,7 @@ import okhttp3.RequestBody;
 
 public class edit_inventory extends AppCompatActivity {
 
-    private TextInputEditText vss,division,range,quantity , loseQ , amountPaid;
+    private TextInputEditText vss,division,range,quantity , amountPaid;
     private TextView date;
     private Spinner ntfpgrade,measurement;
     private AutoCompleteTextView ntfptype,member,products,collector,vssSelect;
@@ -128,18 +128,11 @@ public class edit_inventory extends AppCompatActivity {
             }
             if(member.getText().toString().length()!=0){
                 Log.d("MMMM","");
-
-
                 mmid= model.getMemberId();
                 memberModel.setMemberId(mmid);
-
-
             }
-
         }
         proceed.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View view) {
                 Log.i("REMESHHH","");
@@ -160,7 +153,7 @@ public class edit_inventory extends AppCompatActivity {
                                     String.valueOf(ntfpModel.getNid()),
                                     measurement.getSelectedItem().toString(),
                                     quantity.getText().toString(),
-                                    loseQ.getText().toString(),
+                                    "0",
                                     date.getText().toString(),
                                     amountPaid.getText().toString(),
                                     itemTypeModel.getMycase()+"-"+itemTypeModel.getItemId(),
@@ -199,7 +192,7 @@ public class edit_inventory extends AppCompatActivity {
                                     String.valueOf(ntfpModel.getNid()),
                                     measurement.getSelectedItem().toString(),
                                     quantity.getText().toString(),
-                                    loseQ.getText().toString(),
+                                   "00",
                                     date.getText().toString(),
                                     amountPaid.getText().toString(),
                                     itemTypeModel.getMycase()+"-"+itemTypeModel.getItemId(),
@@ -226,8 +219,6 @@ public class edit_inventory extends AppCompatActivity {
         });
     }
 
-
-
     private void intiViews() {
         collector = findViewById(R.id.collector_spinner);
         checks=new StaticChecks(this);
@@ -235,7 +226,7 @@ public class edit_inventory extends AppCompatActivity {
         ntfptype=findViewById(R.id.ntfptype);
         ntfpgrade=findViewById(R.id.ntfpgrade);
         quantity=findViewById(R.id.edit_quantity);
-        loseQ=findViewById(R.id.edit_lose);
+//        loseQ=findViewById(R.id.edit_lose);
         amountPaid= findViewById(R.id.amountPaid);
         date=findViewById(R.id.date);
         products = findViewById(R.id.spinner_ntfps);
@@ -273,8 +264,6 @@ public class edit_inventory extends AppCompatActivity {
 
     ArrayAdapter<CollectorsModel> collectorAdapter = new ArrayAdapter<CollectorsModel>(this,R.layout.multiline_spinner_dropdown_item,dao.getAllCollector());
     collector.setAdapter(collectorAdapter);
-
-
 
         ArrayAdapter<NTFP> ntfpAdapter = new ArrayAdapter<NTFP>(this,R.layout.multiline_spinner_dropdown_item,dao.getAllNTFPs());
         products.setAdapter(ntfpAdapter);
@@ -317,8 +306,6 @@ public class edit_inventory extends AppCompatActivity {
                 }
             }
         });
-
-
 
         collector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -411,9 +398,9 @@ public class edit_inventory extends AppCompatActivity {
 
 
                     String quntityM=quantity.getText().toString();
-                    String loseAmound = loseQ.getText().toString();
+//                    String loseAmound = loseQ.getText().toString();
                     if (quntityM.length()>0) {
-                        quntityM = String.valueOf(Double.parseDouble(quntityM) - Double.parseDouble(loseAmound));
+                        quntityM = String.valueOf(Double.parseDouble(quntityM));
 
 
                         String amundBy=(String) measurement.getSelectedItem();

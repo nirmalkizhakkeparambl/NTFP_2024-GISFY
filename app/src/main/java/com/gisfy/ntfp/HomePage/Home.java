@@ -381,7 +381,7 @@ public class Home extends AppCompatActivity {
                 RequestBody body = RequestBody.create(mediaType,strings[0]);
                 Log.i("BODDDDDY374",body+"");
                 Request request = new Request.Builder()
-                        .url("http://vanasree.com/NTFPAPI/api/NTFPList")
+                        .url("https://vanasree.com/NTFPAPI/API/NTFPList")
                         .method("POST", body)
                         .addHeader("Content-Type", "application/json")
                         .build();

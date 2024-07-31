@@ -32,8 +32,10 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.gisfy.ntfp.Collectors.CollectorInventory;
 import com.gisfy.ntfp.Collectors.CollectorStockModel;
 import com.gisfy.ntfp.HomePage.Home;
+import com.gisfy.ntfp.Login.Models.CollectorUser;
 import com.gisfy.ntfp.Login.Models.VSSUser;
 import com.gisfy.ntfp.R;
 import com.gisfy.ntfp.SqliteHelper.DBHelper;
@@ -60,6 +62,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -80,12 +83,13 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 
 public class add_inventory extends AppCompatActivity {
 
-    private TextInputEditText vss,division,range,quantity, amountPaid,loseQ;
+    private TextInputEditText vss,division,range,quantity, amountPaid;
     private TextView date,indication;
-    private Spinner ntfpgrade,measurement;
+    private Spinner ntfpgrade,measurement,location;
     private AutoCompleteTextView ntfptype,member,products,collector,vssSelect;
     private Button proceed,AmoundCalc;
     private StaticChecks check;
@@ -104,6 +108,10 @@ public class add_inventory extends AppCompatActivity {
     private  JSONArray arraymem = new JSONArray();
     Double Qnty=0.0;
 
+    private boolean flagLocation = false;
+    private boolean flagNoLocation = false;
+    private List<String> locationNames = new ArrayList<>();
+
     public  String VSsSIDselect;
     public  String COLLLIDSelect;
     public  String MEMIDSelect;
@@ -111,6 +119,7 @@ public class add_inventory extends AppCompatActivity {
     String datanew;
     public  String MeMMIDD;
     private long id = 1;
+    private int locationId =-1;
 
 
     private CollectorStockModel modell;
@@ -254,7 +263,7 @@ public class add_inventory extends AppCompatActivity {
                 quantity.setText(String.valueOf(relation.getInventory().getQuantity()));
             }
 
-            loseQ.setText(losss);
+//            loseQ.setText(losss);
             Log.i("measurementUnit121",relation.getInventory().getMeasurements()+"");
 
 
@@ -300,7 +309,7 @@ public class add_inventory extends AppCompatActivity {
                 } else {
                     quantity.setText(model.getQuantity());
                 }
-                loseQ.setText(model.getLoseAmound());
+//                loseQ.setText(model.getLoseAmound());
             }
             quantity.setText(model.getQuantity());
             inventoryId = model.getRandom();
@@ -356,19 +365,19 @@ public class add_inventory extends AppCompatActivity {
                 basePrice = itemTypeModel.getGrade3Price();
             Double Quntity;
             if (quantity.getText().length()>0) {
-                if(loseQ.getText().toString().isEmpty()){
+//                if(loseQ.getText().toString().isEmpty()){
                     Quntity = Double.parseDouble(quantity.getText().toString());
                     Double amoundY =(Quntity * basePrice);
-                    loseQ.setText("0.0");
+//                    loseQ.setText("0.0");
                     amountPaid.setText(amoundY.toString());
-                }
-                else {
-
-
-                    Quntity = Double.parseDouble(quantity.getText().toString()) - Double.parseDouble(loseQ.getText().toString());
-                }
-                Double amoundY =(Quntity * basePrice);
-                amountPaid.setText(amoundY.toString());
+//                }
+//                else {
+//
+//
+//                    Quntity = Double.parseDouble(quantity.getText().toString());
+//                }
+//                Double amoundY =(Quntity * basePrice);
+//                amountPaid.setText(amoundY.toString());
 
             }
             else
@@ -439,17 +448,18 @@ public class add_inventory extends AppCompatActivity {
                                     Log.i("CCID2",IDDD+"");
 
                                 }
-                               Double loQ  = Double.valueOf(loseQ.getText().toString());
+                               Double loQ  = 0.0;
                                 if( loQ > 0){
 
-                                    Double losQa  = Double.valueOf(loseQ.getText().toString());
+                                    Double losQa  = 0.0;
                                     Double QtyA = Double.valueOf(quantity.getText().toString());
                                     Qnty = (QtyA - losQa);
 
 
                                 }else {
-                                    loseQ.setText(Qnty.toString());
-                                    Qnty =Double.valueOf(quantity.getText().toString());
+//                                    loseQ.setText(Qnty.toString());
+                                    Double QtyA = Double.valueOf(quantity.getText().toString());
+                                    Qnty =QtyA;
                                 }
 
                                        Log.i("getNtfpId173", ntfpModel.getNid() + "");
@@ -465,9 +475,11 @@ public class add_inventory extends AppCompatActivity {
                                                 ntfpgrade.getSelectedItem().toString(),
                                                 measurement.getSelectedItem().toString(),
                                                 Qnty,
-                                                Double.parseDouble(loseQ.getText().toString()),
+                                                0.0,
                                                 Double.parseDouble(amountPaid.getText().toString()),
-                                                datanew);
+                                                datanew,
+                                                location.getSelectedItem().toString(),
+                                                locationId);
                                         VSSUser user = new SharedPref(add_inventory.this).getVSS();
                                         Model_payment payment = new Model_payment(
                                                 inventoryId,
@@ -543,16 +555,16 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
                                             VSsSIDselect =(databaseHelper.TABLE_5_COL_5);
                                             MEMIDSelect=(databaseHelper.TABLE_5_COL_6);
                                         }
-                                        Double loQ  = Double.valueOf(loseQ.getText().toString());
+                                        Double loQ  = 0.0;
                                         if( loQ > 0){
 
-                                            Double losQa  = Double.valueOf(loseQ.getText().toString());
+                                            Double losQa  = 0.0;
                                             Double QtyA = Double.valueOf(quantity.getText().toString());
                                             Qnty = (QtyA - losQa);
 
 
                                         }else {
-                                            loseQ.setText("0.0");
+//                                            loseQ.setText("0.0");
                                             Qnty =Double.valueOf(quantity.getText().toString());
                                         }
 
@@ -570,9 +582,10 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
                                                 ntfpgrade.getSelectedItem().toString(),
                                                 measurement.getSelectedItem().toString(),
                                                 Qnty,
-                                                Double.parseDouble(loseQ.getText().toString()),
+                                                00,
                                                 Double.parseDouble(amountPaid.getText().toString()),
-                                                datanew);
+                                                datanew,
+                                                location.getSelectedItem().toString(),locationId);
 
                                         VSSUser user = new SharedPref(add_inventory.this).getVSS();
 
@@ -664,7 +677,7 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
         progressDialog.setMessage("Getting Data...");
         progressDialog.setCancelable(false);
         progressDialog.show();
-        String URL="http://vanasree.com/NTFPAPI/API/VSSList";
+        String URL="https://vanasree.com/NTFPAPI/API/VSSList";
         RequestQueue queue = Volley.newRequestQueue(this);
         JsonArrayRequest loginRequest = new JsonArrayRequest(com.android.volley.Request.Method.POST, URL,
                 null,new Response.Listener<JSONArray>()
@@ -820,7 +833,7 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
 
     private void postDataUsingVolley(JSONArray requestBody) {
         //  Log.i("getREQUESTBODY ",requestBody.toString());
-        String URL = "http://vanasree.com/NTFPAPI/API/CollectorList";
+        String URL = "https://vanasree.com/NTFPAPI/API/CollectorList";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Getting Data...");
@@ -941,9 +954,10 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
         requestQueue.add(loginRequest);
 
     }
+
     private void postDataUsingVolleyone(JSONArray requestBody) {
 
-        String URL = "http://vanasree.com/NTFPAPI/API/MemberList";
+        String URL = "https://vanasree.com/NTFPAPI/API/MemberList";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Getting Data...");
@@ -1031,10 +1045,9 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
 
     }
 
-
     private void intiViews() {
-        pref=new SharedPref(this);
-
+        pref = new SharedPref(this);
+        location = findViewById(R.id.location);
         check = new StaticChecks(this);
         collector = findViewById(R.id.collector_spinner);
         checks=new StaticChecks(this);
@@ -1042,7 +1055,7 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
         ntfptype=findViewById(R.id.ntfptype);
         ntfpgrade=findViewById(R.id.ntfpgrade);
         quantity=findViewById(R.id.edit_quantity);
-        loseQ=findViewById(R.id.edit_lose);
+//        loseQ=findViewById(R.id.edit_lose);
         amountPaid= findViewById(R.id.amountPaid);
         date=findViewById(R.id.date);
         products=findViewById(R.id.spinner_ntfps);
@@ -1055,6 +1068,7 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
         range=findViewById(R.id.range_name);
         division=findViewById(R.id.division_name);
         measurement=findViewById(R.id.measurement);
+        new locationFeach().execute();
         checks.setValues(new TextInputEditText[]{vss,division,range});
         final Calendar c = Calendar.getInstance();
         Date d = c.getTime();
@@ -1215,13 +1229,13 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
                         basePrice = itemTypeModel.getGrade3Price();
 
                     double quntityM = Double.valueOf(quantity.getText().toString());
-                    if(loseQ.getText().toString().isEmpty()){
-                         loseAmound = 00;
-                    }else {
-
-                        loseAmound = Double.valueOf(loseQ.getText().toString());
-                    }
-
+//                    if(loseQ.getText().toString().isEmpty()){
+//                         loseAmound = 00;
+//                    }else {
+//
+//                        loseAmound = Double.valueOf(loseQ.getText().toString());
+//                    }
+                    loseAmound = 00;
                     String amundBy=(String) measurement.getSelectedItem();
 
                     if((flag == false) && (amundBy.equals("Kilogram")||amundBy.equals("Gram"))){
@@ -1329,8 +1343,6 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
 //    });
     }
 
-
-
     class DecimalDigitsInputFilter implements InputFilter {
         private Pattern mPattern;
         DecimalDigitsInputFilter(int digitsBeforeZero, int digitsAfterZero) {
@@ -1384,7 +1396,7 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
             MediaType mediaType = MediaType.parse("application/json");
             RequestBody body = RequestBody.create(mediaType, strings[0]);
             Request request = new Request.Builder()
-                    .url("http://13.127.166.242/NTFPAPI/API/VSSUppdateStatusForCollectorStock")
+                    .url("https://13.127.166.242/NTFPAPI/API/VSSUppdateStatusForCollectorStock")
                     .method("POST", body)
                     .addHeader("Content-Type", "application/json")
                     .build();
@@ -1417,8 +1429,6 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
 
         }
     }
-
-
 
     private boolean setStatus(String json) throws JSONException {
         Log.i("ksdks",json);
@@ -1461,7 +1471,131 @@ Log.i("COLLLNamelengtyh",collector.getText().length()+"");
         }
     }
 
+JSONArray jsonArray;
+    private class locationFeach extends AsyncTask<Void, Void, String> {
+        protected void onPreExecute() {
+            super.onPreExecute();
+//            findViewById(R.id.spin_kit).setVisibility(View.VISIBLE);
 
+        }
+        @Override
+        protected String doInBackground(Void... params) {
+            VSSUser user = new SharedPref(add_inventory.this).getVSS();
+            try {
+                OkHttpClient client = new OkHttpClient().newBuilder()
+                        .build();
+                // Replace with your API URL
+
+                JSONObject jsonBody = new JSONObject();
+                jsonBody.put("RangeId",  user.getRangeId());
+
+                // Convert the JSON object to a string
+                String requestBody = jsonBody.toString();
+                Log.d("ReQQQQ111",requestBody);
+                RequestBody requestJsonBody = RequestBody.create(MediaType.parse("application/json"), requestBody);
+                // Replace with your request body, if needed
+
+                Request request = new Request.Builder()
+                        .url("https://vanasree.com/NTFPAPI/API/LocationList")
+                        .method("POST", requestJsonBody)
+                        .addHeader("Content-Type", "application/json")
+                        .build();
+
+                okhttp3.Response response = client.newCall(request).execute();
+                String responseData = response.body().string();
+                if (response.isSuccessful()) {
+                    ResponseBody responseBodyy = response.body();
+                    if(responseBodyy != null){
+                        try {
+
+                            jsonArray = new JSONArray(responseData);
+
+
+                            // Check if the response contains location data
+                            if (jsonArray.length() > 0 && jsonArray.getJSONObject(0).has("location_name")) {
+
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    JSONObject item = jsonArray.getJSONObject(i);
+                                    String locationName = item.getString("location_name");
+                                    locationNames.add(locationName);
+                                }
+                                flagLocation= true;
+                                flagNoLocation = false;
+
+
+                            } else {
+                                flagNoLocation = true;
+                                flagLocation = false;
+                                // Handle the case where "Status" is "Not Found!"
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+
+                } else {
+
+                    // Handle non-successful response
+                    return "Error: " + response.code();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            if(flagLocation == true){
+                // Populate the Spinner with location names
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(add_inventory.this, android.R.layout.simple_spinner_item, locationNames);
+                adapter.setDropDownViewResource(R.layout.spinner_layout);
+                location.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+                // Set an OnItemSelectedListener to handle item selection and get the corresponding id
+                location.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                        // Get the corresponding id from the JSON data
+                        try {
+                            JSONObject selectedItem = jsonArray.getJSONObject(position);
+                            locationId = selectedItem.getInt("id");
+
+                            // Use locationId as needed
+                            // ...
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parentView) {
+                        // Handle nothing selected
+                        locationId = 0;
+                    }
+                });
+                findViewById(R.id.spin_kit).setVisibility(View.GONE);
+            }
+            else if(flagNoLocation == true){
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(add_inventory.this, android.R.layout.simple_spinner_item, new String[]{"No location available"});
+                adapter.setDropDownViewResource(R.layout.spinner_layout);
+                location.setAdapter(adapter);
+                locationId = 0;
+                adapter.notifyDataSetChanged();
+                findViewById(R.id.spin_kit).setVisibility(View.GONE);
+            }
+            // Handle the result of the HTTP request here
+            // This method runs on the UI thread, so you can update UI elements here
+            // For example, display the result in a TextView
+
+
+        }
+    }
 
 }
 

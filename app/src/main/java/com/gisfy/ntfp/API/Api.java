@@ -36,7 +36,7 @@ import retrofit2.http.POST;
 
 public interface Api {
 
-    String BASE_URL = "http://vanasree.com/NTFPAPI/API/";
+    String BASE_URL = "https://vanasree.com/NTFPAPI/API/";
 
     @POST("VSS")
     @Headers({ "Content-Type: application/json;charset=UTF-8"})

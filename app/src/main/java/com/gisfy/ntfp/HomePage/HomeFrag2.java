@@ -14,6 +14,7 @@ import com.gisfy.ntfp.Collectors.CollectorInventory;
 import com.gisfy.ntfp.Collectors.Collector_Pass;
 import com.gisfy.ntfp.Collectors.InventoryList;
 import com.gisfy.ntfp.Collectors.PDFList;
+import com.gisfy.ntfp.Collectors.PriceListPage;
 import com.gisfy.ntfp.Collectors.StockRequest;
 import com.gisfy.ntfp.Collectors.Ticket_UI;
 import com.gisfy.ntfp.Collectors.VideoGallaryActivity;
@@ -153,6 +154,7 @@ public class HomeFrag2 extends Fragment {
                         break;
                     case 3:
                         clearList();
+                        standardModels.add(new HomeModel("Pricing List", R.drawable.vector_payment_green, PriceListPage.class,false,""));
                         standardModels.add(new HomeModel(getString(R.string.materials), R.drawable.vector_pdf, PDFList.class, false,""));
                         standardModels.add(new HomeModel(getString(R.string.tutorials), R.drawable.vector_tutorials,VideoGallaryActivity.class, false,""));
                         standardAdapter.notifyDataSetChanged();

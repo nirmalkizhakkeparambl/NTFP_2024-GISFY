@@ -24,13 +24,13 @@
         <item>No</item>
     </array>
     <array name="sampleSpinnerEd">
-    <item>select qualification</item>
-    <item>Illiterate</item>
-    <item>primary</item>
-    <item>10th</item>
-    <item >12th</item>
-    <item>graduation</item>
-    <item>post graduation</item>
+        <item>select qualification</item>
+        <item>Illiterate</item>
+        <item>primary</item>
+        <item>10th</item>
+        <item>12th</item>
+        <item>graduation</item>
+        <item>post graduation</item>
     </array>
     <array name="relation">
         <item>Select Relation</item>
@@ -89,7 +89,7 @@
     <array name="transit_titles">
         <item>NTFP</item>
         <item>Quantity</item>
-        <item>Member ID </item>
+        <item>Member ID</item>
     </array>
 
     <array name="transit_titles2">
@@ -353,6 +353,7 @@
     <string name="recheckpass">Please recheck your username/password</string>
     <string name="paymentsList">Payments List</string>
     <string name="selectntfptype">Select NTFP Type*</string>
+    <string name="selectntfploc">Select NTFP Location*</string>
     <string name="back">Back</string>
 
     <string name="submit" translatable="true">Submit</string>
@@ -436,8 +437,8 @@
     <string name="transitfor">Transit To</string>
     <string name="enterscstcategory">"Enter ScSt Federation "</string>
     <string name="pleaseselecttransitfor">Please Select Transit Data</string>
-    <string name="profileURL">http://vanasree.com/NTFPProfilePictures/</string>
-    <string name="baseURL">http://vanasree.com/</string>
+    <string name="profileURL">https://vanasree.com/NTFPProfilePictures/</string>
+    <string name="baseURL">https://vanasree.com/</string>
     <string name="type_to_search">Type to search</string>
     <string name="selectntfpgrade">Select NTFP Grade*</string>
     <string name="action_settings">Settings</string>

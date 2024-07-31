@@ -156,7 +156,7 @@ public class adapter_request_list  extends RecyclerView.Adapter<adapter_request_
                 if (permissionUtils.checkPermission(activity, 1, view)) {
                      try {
                          Log.i("datagetTransUniqueId",data.getTransUniqueId()+"");
-                         activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://vanasree.com/NTFPIMS/VSSTransitPass.aspx?TransUniqueId="+data.getTransUniqueId())));
+                         activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://vanasree.com/NTFPIMS/VSSTransitPass.aspx?TransUniqueId="+data.getTransUniqueId())));
                      } catch (Exception e) {
                          e.getStackTrace();
                      }

@@ -148,7 +148,7 @@ public class ImportExcel extends AppCompatActivity {
             File file = new File(getRealPathFromURI(uri));
             String fileName = file.getName();
             OkHttpClient client = new OkHttpClient();
-            String url = "http://vanasree.com/NTFPAPI/API/ReadExcel";
+            String url = "https://vanasree.com/NTFPAPI/API/ReadExcel";
             RequestBody body = new MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
                     .addFormDataPart("InputFile", file.getName(), RequestBody.create(MediaType.parse("application/vnd.ms-excel"), file))
